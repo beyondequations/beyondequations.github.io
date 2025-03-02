@@ -3,6 +3,7 @@ import tkinter as tk
 from tkinter import ttk
 from datetime import datetime
 import glob
+from bs4 import BeautifulSoup  # For HTML parsing
 
 # Base directory (assuming script runs in beyond-equations/)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -24,17 +25,26 @@ def write_file(file_path, content):
         f.write(content)
 
 def get_all_articles():
-    """Scan all articles and return a sorted list by creation date."""
+    """Scan all articles and return a sorted list by creation date with HTML titles."""
     article_files = glob.glob(os.path.join(BASE_DIR, "articles", "*", "*.html"))
     articles = []
     for file_path in article_files:
         creation_time = os.path.getctime(file_path)
         filename = os.path.basename(file_path)
         category = os.path.basename(os.path.dirname(file_path))
-        title = filename.replace(".html", "").replace("-", " ").title()
         relative_path = f"articles/{category}/{filename}"
+        
+        # Parse the HTML to get the <h2> title
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                soup = BeautifulSoup(f, 'html.parser')
+                title = soup.find('h2').get_text(strip=True) if soup.find('h2') else filename.replace(".html", "").replace("-", " ").title()
+        except Exception:
+            title = filename.replace(".html", "").replace("-", " ").title()  # Fallback
+        
         articles.append({"path": relative_path, "title": title, "date": creation_time})
     
+    # Sort by date (newest first)
     articles.sort(key=lambda x: x["date"], reverse=True)
     return articles[:8]  # Limit to 8 recent articles
 
