@@ -85,19 +85,10 @@ def parse_content(content):
     return content_parts
 
 def create_article_file(category, title, content_parts, filename, image_path=None):
-    """Generate a new article HTML file with image support."""
+    """Generate a new article HTML file with image at the end."""
     article_dir = os.path.join(BASE_DIR, "articles", category)
     os.makedirs(article_dir, exist_ok=True)
     article_path = os.path.join(article_dir, f"{filename}.html")
-
-    # Handle image if provided
-    image_html = ""
-    if image_path:
-        image_filename = os.path.basename(image_path)
-        dest_image_path = os.path.join(BASE_DIR, "assets", "images", image_filename)
-        os.makedirs(os.path.dirname(dest_image_path), exist_ok=True)
-        shutil.copy(image_path, dest_image_path)
-        image_html = f'                <img src="../../assets/images/{image_filename}" alt="{title} Image" class="article-image">\n'
 
     content_html = ""
     for part in content_parts:
@@ -108,6 +99,14 @@ def create_article_file(category, title, content_parts, filename, image_path=Non
             content_html += f'                <div class="equation">{part["content"]}</div>\n'
         elif part["type"] == "code":
             content_html += f'                <pre><code>{part["content"]}</code></pre>\n'
+
+    image_html = ""
+    if image_path:
+        image_filename = os.path.basename(image_path)
+        dest_image_path = os.path.join(BASE_DIR, "assets", "images", image_filename)
+        os.makedirs(os.path.dirname(dest_image_path), exist_ok=True)
+        shutil.copy(image_path, dest_image_path)
+        image_html = f'                <img src="../../assets/images/{image_filename}" alt="{title} Image" class="article-image">\n'
 
     article_template = f'''<!DOCTYPE html>
 <html lang="en">
@@ -138,7 +137,8 @@ def create_article_file(category, title, content_parts, filename, image_path=Non
             <article class="article">
                 <h2>{title}</h2>
                 <div class="article-meta">Published: {datetime.now().strftime('%B %d, %Y')} | Category: {category.capitalize()}</div>
-{image_html}{content_html}
+                {content_html}
+                {image_html}
                 <p><a href="../../index.html">Back to Home</a></p>
             </article>
         </main>
@@ -190,7 +190,8 @@ def update_index_html(index_content, category, title, content_parts, filename, r
     article_entry = f'''            <article class="article" data-category="{category}">
                 <h2><a href="articles/{category}/{filename}.html">{title}</a></h2>
                 <div class="article-meta">Published: {datetime.now().strftime('%B %d, %Y')} | Category: {category.capitalize()}</div>
-{image_html}                <p>{preview}</p>
+                <p>{preview}</p>
+                {image_html}
             </article>
 '''
     insert_pos = index_content.find('<article class="article"')
@@ -277,7 +278,7 @@ def submit_article():
 # GUI Setup
 root = tk.Tk()
 root.title("Create New Article - Beyond Equations")
-root.geometry("600x600")  # Slightly increased height to ensure space
+root.geometry("600x600")
 
 # File paths
 index_path = os.path.join(BASE_DIR, "index.html")
