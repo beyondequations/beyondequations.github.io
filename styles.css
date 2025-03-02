@@ -28,6 +28,10 @@ header {
     align-items: center;
 }
 
+header h1 {
+    font-size: 2rem;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -97,6 +101,29 @@ nav a:hover {
     padding: 1rem;
     margin: 1rem 0;
     border-left: 4px solid #1e3799;
+}
+
+/* Image Styling */
+.article-image {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+/* Code Styling */
+pre {
+    background: #f0f3f7;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-left: 4px solid #1e3799;
+    overflow-x: auto;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
 }
 
 /* Sidebar */
