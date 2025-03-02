@@ -131,11 +131,12 @@
         // Add click events to navigation links
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const category = link.getAttribute('href').substring(1); // Remove #
-                if (category === 'gallery' || category === 'about') {
-                    window.location.href = category + '.html'; // Navigate to page
+                const href = link.getAttribute('href');
+                if (href === 'gallery.html' || href === 'about.html') {
+                    window.location.href = href; // Navigate to page directly
                 } else {
+                    e.preventDefault();
+                    const category = href.substring(1); // Remove #
                     filterCategory(category); // Filter articles
                 }
             });
