@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI to Z Challenge: AI-Powered Archaeological Discovery in the Amazon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #E0EFFF; /* Very Light Blue/Almost White */
+            color: #212529; /* Dark Grey/Black */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Default max-width, can be overridden by Tailwind */
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px; /* Base height */
+            max-height: 400px; /* Max height */
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+            padding: 1.5rem; /* p-6 */
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+        .section-title {
+            color: #0077B6; /* Deep Azure */
+        }
+        .highlight-text {
+            color: #FFC107; /* Amber Gold */
+            font-weight: 700;
+        }
+        .flowchart-step {
+            background-color: #ADE8F4; /* Pale Cyan */
+            color: #0077B6; /* Deep Azure */
+            border: 2px solid #00B4D8; /* Bright Sky Blue */
+        }
+        .flowchart-arrow {
+            color: #0077B6; /* Deep Azure */
+        }
+        /* */
+        /* */
+        /* */
+        /* */
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-[#0077B6] text-white py-8 px-4 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">OpenAI to Z Challenge</h1>
+        <p class="text-lg md:text-xl text-[#ADE8F4]">Unveiling Amazonia's Ancient Secrets with AI</p>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+
+        <section id="intro" class="mb-12">
+            <div class="card">
+                <h2 class="text-2xl font-bold section-title mb-4">The Amazon: A Realm of Untold Histories</h2>
+                <p class="mb-4 text-gray-700">
+                    For centuries, the vast Amazon rainforest, stretching over <span class="font-bold text-[#00B4D8]">6,000,000 square kilometers</span> across <span class="font-bold text-[#00B4D8]">nine South American countries</span>, has captivated imaginations with legends of "lost cities" like Z, Paititi, and El Dorado. Historically perceived as a "pristine wilderness," recent archaeological advancements are revealing a different story: a landscape once home to an estimated <span class="font-bold text-[#00B4D8]">8 to 10 million people</span> as far back as 8,000 years ago. These ancient societies engineered their environment, building complex settlements and transforming the forest into a "vast cultivated garden." The OpenAI to Z Challenge invites digital explorers to leverage cutting-edge AI and open-source data to uncover these hidden histories, potentially rewriting our understanding of pre-colonial Amazonia.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                    <div class="bg-[#ADE8F4] p-4 rounded-lg shadow">
+                        <p class="text-3xl font-bold text-[#0077B6]">6M+ km²</p>
+                        <p class="text-sm text-[#0077B6]">Amazon Expanse</p>
+                    </div>
+                    <div class="bg-[#ADE8F4] p-4 rounded-lg shadow">
+                        <p class="text-3xl font-bold text-[#0077B6]">9 Countries</p>
+                        <p class="text-sm text-[#0077B6]">Geographic Scope</p>
+                    </div>
+                    <div class="bg-[#ADE8F4] p-4 rounded-lg shadow">
+                        <p class="text-3xl font-bold text-[#0077B6]">8-10M People</p>
+                        <p class="text-sm text-[#0077B6]">Est. Ancient Population</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="toolkit" class="mb-12">
+            <div class="card">
+                <h2 class="text-2xl font-bold section-title mb-4">The Digital Explorer's Toolkit</h2>
+                <p class="mb-6 text-gray-700">
+                    Traditional archaeological fieldwork in the Amazon faces immense challenges due to dense canopy and vast terrain. The OpenAI to Z Challenge champions a new era of discovery, powered by advanced AI models and a diverse array of open-source data. This digital toolkit enables researchers to "see" beneath the foliage and analyze complex information at an unprecedented scale.
+                </p>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-[#0077B6] mb-2">Core AI Models: The Brains of the Operation</h3>
+                    <p class="text-gray-700">OpenAI's <span class="font-semibold">o3/o4 mini</span> models provide powerful visual perception for analyzing satellite and LIDAR imagery, while <span class="font-semibold">GPT-4.1</span> excels at processing vast textual datasets from historical records and academic papers, unlocking contextual clues.</p>
+                </div>
+
+                <h3 class="text-xl font-semibold text-[#0077B6] mb-4">Key Data Sources & Technologies</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-[#E0EFFF] p-4 rounded-lg border border-[#00B4D8] text-center">
+                        <span class="text-4xl mb-2 block">🛰️</span>
+                        <h4 class="font-semibold text-[#0077B6] mb-1">Satellite Imagery</h4>
+                        <p class="text-xs text-gray-600">High-resolution optical & multispectral data (e.g., Sentinel, Landsat) for broad-scale reconnaissance and detecting crop/soil marks.</p>
+                    </div>
+                    <div class="bg-[#E0EFFF] p-4 rounded-lg border border-[#00B4D8] text-center">
+                        <span class="text-4xl mb-2 block">🌲<span class="text-[#FFC107] mx-1">➡️</span>⛰️</span>
+                        <h4 class="font-semibold text-[#0077B6] mb-1">LIDAR Data</h4>
+                        <p class="text-xs text-gray-600">Penetrates canopy to create bare-earth Digital Elevation Models (DEMs), revealing hidden topographic features.</p>
+                    </div>
+                    <div class="bg-[#E0EFFF] p-4 rounded-lg border border-[#00B4D8] text-center">
+                        <span class="text-4xl mb-2 block">📡</span>
+                        <h4 class="font-semibold text-[#0077B6] mb-1">SAR Imagery</h4>
+                        <p class="text-xs text-gray-600">Synthetic Aperture Radar for all-weather imaging, capable of detecting subsurface anomalies and changes.</p>
+                    </div>
+                    <div class="bg-[#E0EFFF] p-4 rounded-lg border border-[#00B4D8] text-center">
+                        <span class="text-4xl mb-2 block">📜<span class="text-[#FFC107] mx-1">🗺️</span></span>
+                        <h4 class="font-semibold text-[#0077B6] mb-1">Textual & Oral Data</h4>
+                        <p class="text-xs text-gray-600">Colonial diaries, Indigenous oral maps, and academic papers providing historical and cultural context.</p>
+                    </div>
+                </div>
+                
+                <h3 class="text-xl font-semibold text-[#0077B6] mb-4">Data Source Impact Potential</h3>
+                <p class="mb-4 text-gray-700">Different data sources offer varying levels of information volume, processing complexity, and potential impact on discovery. The chart below illustrates a conceptual relationship between these factors for key data types. Larger bubbles indicate higher potential impact.</p>
+                <div class="chart-container bg-white p-2 rounded shadow mx-auto h-[350px] md:h-[450px] max-w-2xl">
+                    <div id="plotlyBubbleChart"></div>
+                </div>
+                <p class="mt-2 text-xs text-center text-gray-500">Conceptual representation of data source characteristics.</p>
+            </div>
+        </section>
+
+        <section id="methodology" class="mb-12">
+            <div class="card">
+                <h2 class="text-2xl font-bold section-title mb-4">The Discovery Blueprint</h2>
+                <p class="mb-6 text-gray-700">
+                    The challenge encourages a systematic, AI-driven workflow to identify and verify potential archaeological sites. This multi-stage process integrates diverse data types and analytical techniques, emphasizing reproducibility and robust evidence.
+                </p>
+
+                <h3 class="text-xl font-semibold text-[#0077B6] mb-4">AI-Driven Archaeological Workflow</h3>
+                <div class="space-y-4 md:space-y-0 md:flex md:flex-wrap md:justify-center md:items-center mb-8 text-xs md:text-sm">
+                    <div class="flowchart-step p-3 rounded-md shadow text-center md:mr-2">1. Data Acquisition (Open Source)</div>
+                    <div class="flowchart-arrow text-2xl font-bold text-center md:mr-2 hidden md:block">➡️</div>
+                    <div class="flowchart-arrow text-2xl font-bold text-center md:mr-2 md:hidden">⬇️</div>
+                    <div class="flowchart-step p-3 rounded-md shadow text-center md:mr-2">2. Pre-processing (Calibration, DEMs)</div>
+                    <div class="flowchart-arrow text-2xl font-bold text-center md:mr-2 hidden md:block">➡️</div>
+                    <div class="flowchart-arrow text-2xl font-bold text-center md:mr-2 md:hidden">⬇️</div>
+                    <div class="flowchart-step p-3 rounded-md shadow text-center md:mr-2">3. AI Analysis (Vision & Textual)</div>
+                    <div class="flowchart-arrow text-2xl font-bold text-center md:mr-2 hidden md:block">➡️</div>
+                    <div class="flowchart-arrow text-2xl font-bold text-center md:mr-2 md:hidden">⬇️</div>
+                    <div class="w-full md:hidden my-2"></div> 
+                    <div class="flowchart-step p-3 rounded-md shadow text-center md:mr-2">4. Multi-Modal Fusion</div>
+                    <div class="flowchart-arrow text-2xl font-bold text-center md:mr-2 hidden md:block">➡️</div>
+                    <div class="flowchart-arrow text-2xl font-bold text-center md:mr-2 md:hidden">⬇️</div>
+                    <div class="flowchart-step p-3 rounded-md shadow text-center md:mr-2">5. Site Prediction (Anomalies)</div>
+                    <div class="flowchart-arrow text-2xl font-bold text-center md:mr-2 hidden md:block">➡️</div>
+                    <div class="flowchart-arrow text-2xl font-bold text-center md:mr-2 md:hidden">⬇️</div>
+                    <div class="flowchart-step p-3 rounded-md shadow text-center md:mr-2">6. Dual-Method Verification</div>
+                    <div class="flowchart-arrow text-2xl font-bold text-center md:mr-2 hidden md:block">➡️</div>
+                    <div class="flowchart-arrow text-2xl font-bold text-center md:mr-2 md:hidden">⬇️</div>
+                    <div class="bg-[#FFC107] text-[#0077B6] font-bold p-3 rounded-md shadow text-center">7. New Discoveries!</div>
+                </div>
+
+                <h3 class="text-xl font-semibold text-[#0077B6] mb-4">Target Archaeological Signatures</h3>
+                <p class="mb-4 text-gray-700">AI models are trained to detect various anthropogenic landscape modifications. The chart below highlights key types of features sought, with hypothetical detection priority scores indicating focus areas.</p>
+                <div class="chart-container bg-white p-2 rounded shadow mx-auto h-[350px] md:h-[400px] max-w-2xl">
+                    <canvas id="archaeologicalSignaturesChart"></canvas>
+                </div>
+                <p class="mt-2 text-xs text-center text-gray-500">Illustrative detection priorities for different archaeological features.</p>
+            </div>
+        </section>
+
+        <section id="dynamics" class="mb-12">
+            <div class="card">
+                <h2 class="text-2xl font-bold section-title mb-4">The Challenge Dynamics</h2>
+                <p class="mb-6 text-gray-700">
+                    The OpenAI to Z Challenge is a competitive endeavor designed to spur innovation. Submissions are rigorously evaluated based on several key criteria, with significant rewards for top discoveries.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#0077B6] mb-4">Evaluation Criteria</h3>
+                        <p class="mb-4 text-gray-700">Each qualifying submission is graded on five equally weighted criteria, crucial for determining archaeological impact and investigative rigor.</p>
+                        <div class="chart-container bg-white p-2 rounded shadow mx-auto h-[300px] md:h-[350px]">
+                            <canvas id="evaluationCriteriaChart"></canvas>
+                        </div>
+                         <p class="mt-2 text-xs text-center text-gray-500">All criteria are weighted at 20 points each.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#0077B6] mb-4">Key Dates & Prizes</h3>
+                        <div class="space-y-4">
+                            <div class="bg-[#E0EFFF] p-4 rounded-lg border border-[#00B4D8]">
+                                <h4 class="font-semibold text-[#0077B6]">Timeline</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-700">
+                                    <li>Start Date: <span class="font-medium">May 15, 2025</span></li>
+                                    <li>Final Submission Deadline: <span class="font-medium">June 29, 2025</span></li>
+                                    <li>Finalists Announced: Approx. 30 days after deadline</li>
+                                </ul>
+                            </div>
+                            <div class="bg-[#E0EFFF] p-4 rounded-lg border border-[#00B4D8]">
+                                <h4 class="font-semibold text-[#0077B6]">Prizes (Cash/OpenAI Credits Mix)</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-700">
+                                    <li>1st Place: <span class="font-medium highlight-text">$250,000</span> + Funding</li>
+                                    <li>2nd Place: <span class="font-medium highlight-text">$100,000</span></li>
+                                    <li>3rd Place: <span class="font-medium highlight-text">$50,000</span></li>
+                                </ul>
+                                <p class="text-xs text-gray-600 mt-1">Early sharing prizes also available.</p>
+                            </div>
+                            <p class="text-sm text-gray-700">The top five teams will present their findings in a live-streamed event to a panel of experts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="mb-12">
+            <div class="card">
+                <h2 class="text-2xl font-bold section-title mb-4">Forging New Frontiers: Broader Significance</h2>
+                <p class="mb-6 text-gray-700">
+                    Beyond the thrill of discovery and competition, the OpenAI to Z Challenge aims to make lasting contributions to science, history, and cultural heritage preservation. The insights and methodologies developed can have far-reaching impacts.
+                </p>
+                <h3 class="text-xl font-semibold text-[#0077B6] mb-4">Anticipated Long-Term Impacts</h3>
+                <p class="mb-4 text-gray-700">The collective efforts of participants are expected to yield diverse benefits, from rewriting historical narratives to informing modern conservation strategies in the Amazon.</p>
+                <div class="chart-container bg-white p-2 rounded shadow mx-auto h-[350px] md:h-[400px] max-w-lg">
+                    <canvas id="longTermImpactsChart"></canvas>
+                </div>
+                <p class="mt-2 text-xs text-center text-gray-500">Illustrative distribution of potential long-term impacts.</p>
+                 <p class="mt-6 text-gray-700">
+                    Ultimately, this initiative seeks to foster a deeper appreciation for the rich, complex history of Amazonian civilizations and to highlight the critical need for ongoing research and preservation in a region facing significant environmental pressures.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#0077B6] text-white py-6 px-4 text-center">
+        <p class="text-sm text-[#ADE8F4]">A new era of exploration begins. The Amazon's past awaits its future.</p>
+        <p class="text-xs text-[#CAF0F8] mt-1">Infographic based on the OpenAI to Z Challenge overview and associated research frameworks. For illustrative purposes only.</p>
+    </footer>
+
+    <script>
+        const chartJsTooltipCallbacks = {
+            title: function(tooltipItems) {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            }
+        };
+
+        function wrapLabels(label, maxWidth = 16) {
+            if (typeof label !== 'string' || label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            if (currentLine.trim().length > 0) {
+                lines.push(currentLine.trim());
+            }
+            return lines.length > 0 ? lines : [label]; 
+        }
+        
+        const azureGoldPalette = {
+            deepAzure: '#0077B6',
+            brightSkyBlue: '#00B4D8',
+            paleCyan: '#ADE8F4',
+            amberGold: '#FFC107',
+            lightGrey: '#F0F0F0',
+            darkText: '#212529'
+        };
+
+        // Plotly Bubble Chart: Data Source Impact Potential
+        const plotlyBubbleData = [{
+            x: ['Low Volume', 'High Volume', 'Medium Volume', 'Low Volume'], // Data Volume
+            y: ['Low Complexity', 'High Complexity', 'High Complexity', 'Medium Complexity'], // Processing Complexity
+            mode: 'markers',
+            marker: {
+                size: [20, 60, 40, 30], // Potential for Discovery Impact (example values)
+                color: [azureGoldPalette.brightSkyBlue, azureGoldPalette.amberGold, azureGoldPalette.deepAzure, azureGoldPalette.paleCyan],
+                sizemode: 'diameter',
+                sizeref: 2 
+            },
+            text: ['Satellite Imagery', 'LIDAR Data', 'SAR Imagery', 'Textual & Oral Data'],
+            type: 'scatter',
+            hovertemplate: '<b>%{text}</b><br>' +
+                           'Data Volume: %{x}<br>' +
+                           'Processing Complexity: %{y}<br>' +
+                           'Impact Potential (Size): %{marker.size}<extra></extra>'
+        }];
+        const plotlyBubbleLayout = {
+            title: {
+                text: 'Data Source Characteristics',
+                font: { color: azureGoldPalette.deepAzure, size: 16 }
+            },
+            xaxis: { title: 'Data Volume Estimate', titlefont: {color: azureGoldPalette.darkText}, tickfont: {color: azureGoldPalette.darkText} },
+            yaxis: { title: 'Processing Complexity', titlefont: {color: azureGoldPalette.darkText}, tickfont: {color: azureGoldPalette.darkText} },
+            paper_bgcolor: '#FFFFFF',
+            plot_bgcolor: '#FFFFFF',
+            margin: { t: 40, b: 50, l: 70, r: 20 },
+            showlegend: false,
+            font: { family: 'Inter, sans-serif' }
+        };
+        Plotly.newPlot('plotlyBubbleChart', plotlyBubbleData, plotlyBubbleLayout, {responsive: true, displayModeBar: false});
+
+
+        // Chart.js: Target Archaeological Signatures (Bar Chart)
+        const archSignaturesCtx = document.getElementById('archaeologicalSignaturesChart').getContext('2d');
+        const archSignaturesLabels = [
+            'Geoglyphs', 
+            wrapLabels('Ancient Roads & Canals'), 
+            'Settlement Mounds', 
+            wrapLabels('Raised Fields & Terraces'), 
+            wrapLabels('Terra Preta Soil Zones'), 
+            'Defensive Structures'
+        ];
+        new Chart(archSignaturesCtx, {
+            type: 'bar',
+            data: {
+                labels: archSignaturesLabels,
+                datasets: [{
+                    label: 'Detection Priority Score (Illustrative)',
+                    data: [90, 85, 80, 75, 70, 65],
+                    backgroundColor: [
+                        azureGoldPalette.deepAzure, 
+                        azureGoldPalette.brightSkyBlue, 
+                        azureGoldPalette.amberGold, 
+                        azureGoldPalette.paleCyan,
+                        '#009688', // Teal
+                        '#795548'  // Brown
+                    ],
+                    borderColor: azureGoldPalette.darkText,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: { 
+                        beginAtZero: true, 
+                        title: { display: true, text: 'Priority Score', font: {size: 12, family: 'Inter'}},
+                        ticks: { font: { family: 'Inter' } }
+                    },
+                    y: { 
+                        ticks: { font: { family: 'Inter', size: 10 } }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    title: { display: true, text: 'Focus on Key Archaeological Features', font: {size: 14, family: 'Inter'}, color: azureGoldPalette.deepAzure },
+                    tooltip: { callbacks: chartJsTooltipCallbacks, bodyFont: { family: 'Inter' }, titleFont: { family: 'Inter' } }
+                }
+            }
+        });
+
+        // Chart.js: Evaluation Criteria (Radar Chart)
+        const evalCtx = document.getElementById('evaluationCriteriaChart').getContext('2d');
+        const evalLabels = [
+            wrapLabels('Archaeological Impact'), 
+            wrapLabels('Investigative Ingenuity'), 
+            'Reproducibility', 
+            'Novelty', 
+            wrapLabels('Presentation Craft')
+        ];
+        new Chart(evalCtx, {
+            type: 'radar',
+            data: {
+                labels: evalLabels,
+                datasets: [{
+                    label: 'Max Points (20)',
+                    data: [20, 20, 20, 20, 20],
+                    backgroundColor: 'rgba(0, 180, 216, 0.2)', // Bright Sky Blue with alpha
+                    borderColor: azureGoldPalette.brightSkyBlue,
+                    pointBackgroundColor: azureGoldPalette.brightSkyBlue,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: azureGoldPalette.brightSkyBlue
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: azureGoldPalette.lightGrey },
+                        grid: { color: azureGoldPalette.lightGrey },
+                        pointLabels: { font: { size: 10, family: 'Inter' }, color: azureGoldPalette.darkText },
+                        ticks: { beginAtZero: true, max: 20, stepSize: 5, backdropColor: 'transparent', font: { family: 'Inter' } },
+                        suggestedMin: 0,
+                        suggestedMax: 20
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    title: { display: true, text: 'Judging Criteria (Max 20 pts each)', font: {size: 14, family: 'Inter'}, color: azureGoldPalette.deepAzure },
+                    tooltip: { callbacks: chartJsTooltipCallbacks, bodyFont: { family: 'Inter' }, titleFont: { family: 'Inter' } }
+                }
+            }
+        });
+
+        // Chart.js: Long-Term Impacts (Donut Chart)
+        const impactsCtx = document.getElementById('longTermImpactsChart').getContext('2d');
+        const impactsLabels = [
+            wrapLabels('Advancing Amazonian Historical Knowledge'),
+            wrapLabels('Preserving Cultural Heritage'),
+            wrapLabels('Innovating AI in Archaeology'),
+            wrapLabels('Fostering Global Collaboration'),
+            wrapLabels('Informing Conservation Strategies')
+        ];
+        new Chart(impactsCtx, {
+            type: 'doughnut',
+            data: {
+                labels: impactsLabels,
+                datasets: [{
+                    label: 'Impact Area (%)',
+                    data: [30, 25, 20, 15, 10],
+                    backgroundColor: [
+                        azureGoldPalette.deepAzure,
+                        azureGoldPalette.brightSkyBlue,
+                        azureGoldPalette.amberGold,
+                        azureGoldPalette.paleCyan,
+                        '#4CAF50' // Green
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { font: { size: 10, family: 'Inter' }, color: azureGoldPalette.darkText, boxWidth: 15 } },
+                    title: { display: true, text: 'Anticipated Long-Term Impacts', font: {size: 14, family: 'Inter'}, color: azureGoldPalette.deepAzure },
+                    tooltip: { 
+                        callbacks: {
+                            title: chartJsTooltipCallbacks.title,
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    label += context.parsed + '%';
+                                }
+                                return label;
+                            }
+                        },
+                        bodyFont: { family: 'Inter' }, titleFont: { family: 'Inter' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
