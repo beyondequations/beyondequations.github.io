@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=0.5" />
+  <title>Beyond Equations - Predicting Gold vs Dollar Prices: A Data-Driven Forecasting Approach</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <aside class="sidebar">
+      <h1>Beyond Equations</h1>
+      <p class="tagline">Exploring Math, Code, and Creativity Beyond the Numbers</p>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+        </ul>
+      </nav>
+      <!-- 1. Physics: Atom -->
+      <div class="ascii-art-container">
+       <pre class="ascii-art">
+      .--.
+     /        : ,  . :
+    : :  : :
+     \    /
+      `--'
+      </pre>
+     </div>
+    </aside>
+
+    <main class="main-content">
+      <article class="blog-post">
+        <h2 class="post-title">Predicting Gold vs Dollar Prices: A Data-Driven Forecasting Approach</h2>
+        <p class="post-meta">Posted on May 31, 2025 | Tags: Python, Machine Learning</p>
+        <div class="post-content">
+          <p>Predicting Gold vs Dollar Prices: A Data-Driven Forecasting Approach</p>
+<p>Forecasting the price of Gold against the US Dollar is a complex yet fascinating challenge, influenced by numerous economic, geopolitical, and market factors. In this project, I set out to build a robust predictive system to forecast Gold/USD prices using high-frequency data, aiming to empower data-driven decisions in trading and financial analysis.</p>
+<p>Project Goals</p>
+<p>Gold prices are highly volatile and influenced by various macroeconomic and geopolitical factors, making accurate prediction difficult yet valuable for traders and analysts. To address this, I developed multiple forecasting models using Python and key libraries such as scikit-learn and Facebook's Prophet. The models I implemented include:</p>
+<ul>
+  <li>Ordinary Least Squares (OLS) Linear Regression</li>
+  <li>Ridge Regression (with and without cross-validation)</li>
+  <li>Lasso Regression</li>
+  <li>Meta Prophet (time series forecasting)</li>
+</ul>
+<p>Each model was trained on historical Gold/USD price data with a timestamp resolution of minutes and evaluated for prediction accuracy and stability.</p>
+<p>Data Collection and Preprocessing</p>
+<p>The dataset (Kaggle) comprised detailed historical gold price records, each stamped with a precise date and time in the format YYYY.MM.DD HH: MM. To make the data compatible with machine learning techniques, the timestamps were converted into numerical values using Unix epoch time representation. This transformation allowed the models to interpret temporal patterns as numeric input features.</p>
+<p>Additionally, the data was scaled using standard normalization techniques to improve model stability and convergence during training.</p>
+<p>Methodology</p>
+<p>To capture the complex dynamics of gold price fluctuations, I designed a pipeline that prepares the data and feeds it into multiple predictive models. Each model was trained on the processed data to learn the underlying patterns and generate price forecasts.</p>
+<p>1. Ordinary Least Squares (OLS) Linear Regression and Its Application in Gold/USD Price Prediction</p>
+<p>What is Ordinary Least Squares (OLS) Linear Regression?</p>
+<p>Ordinary Least Squares (OLS) Linear Regression is one of the fundamental techniques in statistical modeling and machine learning used to understand the relationship between a dependent variable and one or more independent variables. It assumes a linear relationship of the form:</p>
+<p>y=β0+β1x1+β2x2+⋯+βnxn+εy = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n + \varepsilon</p>
+<p>Where:</p>
+<ul>
+  <li>yy is the dependent variable (target/output),</li>
+  <li>xix_i are the independent variables (features),</li>
+  <li>βi\beta_i are coefficients that represent the impact of each feature,</li>
+  <li>ε\varepsilon is the error term (residuals).</li>
+</ul>
+<p>The goal of OLS is to find the coefficients βi\beta_i that minimize the sum of squared residuals — the differences between the observed values and the predicted values:</p>
+<p>min⁡β∑i=1m(yi−y^i)2\min_{\beta} \sum_{i=1}^m (y_i - \hat{y}_i)^2</p>
+<p>This approach finds the best-fitting linear line through the data points that minimizes the total squared error.</p>
+<p>Why Use OLS for Predicting Gold Prices?</p>
+<p>OLS Linear Regression provides a straightforward, interpretable model which can serve as a baseline in forecasting tasks. Despite its simplicity, it helps capture linear trends and dependencies in the time-series data and is computationally efficient, making it a good starting point before exploring more complex methods.</p>
+<p>How I Used OLS in the Gold vs Dollar Prediction Project</p>
+<p>1.	Data Preparation:</p>
+<p>The historical Gold price data included timestamps and corresponding prices at 5-minute intervals. To feed the OLS model, the date/time values were converted into numerical Unix epoch timestamps, allowing the model to treat time as a continuous numeric feature. The price data was scaled to normalize value ranges, improving model stability.</p>
+<p>2.	Feature and Target Definition:</p>
+<p>o	Feature (X): The Unix timestamp representing the exact time of the recorded price.</p>
+<p>o	Target (y): The Gold price in USD at that time.</p>
+<p>3.	Training the Model:</p>
+<p>Using the processed data, the OLS model was trained by fitting a linear equation that best relates the timestamp (time progression) to the Gold price. This training process computed the coefficients (β0\beta_0 and β1\beta_1) minimizing prediction errors on the training set.</p>
+<p>4.	Model Prediction:</p>
+<p>After training, the OLS model was used to predict future Gold prices by inputting timestamps for future time points (e.g., every 5 minutes over the next 24 hours). The predicted prices form a linear trend line extrapolating from the historical data.</p>
+<p>5.	Evaluation and Visualization:</p>
+<p>The OLS predictions were plotted alongside actual historical prices to visually assess the model’s fit. While OLS captures the general trend, it struggles with volatility and non-linear patterns, highlighting the need for more advanced models.</p>
+<p>Benefits and Limitations of Using OLS in This Context</p>
+<ul>
+  <li>Benefits:</li>
+</ul>
+<p>o	Simple and interpretable coefficients allow understanding of the linear trend.</p>
+<p>o	Fast training and prediction suitable for baseline comparison.</p>
+<p>o	Requires minimal computational resources.</p>
+<ul>
+  <li>Limitations:</li>
+</ul>
+<p>o	Assumes linearity, which may not hold in volatile financial time-series.</p>
+<p>o	Sensitive to outliers and noise common in market data.</p>
+<p>o	Cannot capture complex non-linear relationships or sudden market shifts.</p>
+<p>Summary:</p>
+<p>OLS Linear Regression served as a foundational model in the project, helping establish a baseline for predicting Gold prices based on time progression. It provided valuable insights into the overall trend but also pointed to the necessity of more sophisticated approaches to handle the intricate dynamics of the Gold/USD market.</p>
+<p>2. Ridge Regression and Its Application in Gold/USD Price Prediction</p>
+<p>What is Ridge Regression?</p>
+<p>Ridge Regression is a type of linear regression that addresses some of the limitations of Ordinary Least Squares (OLS), especially when the predictor variables are highly correlated (multicollinearity) or when the model tends to overfit the training data. It introduces a regularization term to the loss function that penalizes large coefficients.</p>
+<p>The Ridge Regression objective function is:</p>
+<p>min⁡β∑i=1m(yi−y^i)2+α∑j=1nβj2\min_{\beta} \sum_{i=1}^m (y_i - \hat{y}_i)^2 + \alpha \sum_{j=1}^n \beta_j^2</p>
+<p>Where:</p>
+<ul>
+  <li>The first term is the usual residual sum of squares (like OLS).</li>
+  <li>The second term is the L2 regularization penalty, where α\alpha is a hyperparameter controlling the amount of shrinkage applied to coefficients.</li>
+  <li>Larger α\alpha values cause coefficients to shrink more towards zero, reducing model complexity and preventing overfitting.</li>
+</ul>
+<p>Why Use Ridge Regression for Predicting Gold Prices?</p>
+<p>Financial time series like Gold prices can be noisy, with potential multicollinearity among derived features or time-based predictors. Ridge Regression helps improve the model's generalization by controlling coefficient size, which stabilizes predictions on unseen data and reduces sensitivity to outliers or noisy fluctuations.</p>
+<p>How I Used Ridge Regression in the Gold vs Dollar Prediction Project</p>
+<p>1.	Data Processing:</p>
+<p>As with OLS, the Gold price data was timestamped and scaled. To improve model robustness, additional engineered features (e.g., lagged prices, moving averages) could have been included to enrich the feature set, but the core feature remained the numeric timestamp.</p>
+<p>2.	Model Training:</p>
+<p>I trained the Ridge Regression model using the same features and target values. The regularization parameter α\alpha was tuned through cross-validation to find an optimal balance between bias and variance, ensuring the model neither overfits nor underfits the data.</p>
+<p>3.	Coefficient Shrinkage:</p>
+<p>Ridge Regression’s penalty term shrank the regression coefficients toward zero without forcing any to become exactly zero, thus maintaining all features but reducing their influence if they were not strongly predictive.</p>
+<p>4.	Prediction and Evaluation:</p>
+<p>The model predicted Gold prices on test data and future timestamps similarly to OLS but exhibited smoother predictions less sensitive to noise or minor data fluctuations. The reduced variance improved forecast stability, especially in periods of volatile price changes.</p>
+<p>5.	Comparison with OLS:</p>
+<p>Ridge Regression often outperformed OLS in terms of mean squared error on validation data, thanks to its regularization that helped prevent overfitting and improved generalization.</p>
+<p>Benefits and Limitations of Using Ridge Regression in This Context</p>
+<ul>
+  <li>Benefits:</li>
+</ul>
+<p>o	Controls model complexity and reduces overfitting via L2 regularization.</p>
+<p>o	Handles multicollinearity better than OLS by shrinking correlated feature coefficients.</p>
+<p>o	Provides more stable and reliable predictions on noisy financial data.</p>
+<ul>
+  <li>Limitations:</li>
+</ul>
+<p>o	Coefficients are shrunk but never zeroed out, so it does not perform feature selection.</p>
+<p>o	Choice of α\alpha is crucial; improper tuning can lead to underfitting or overfitting.</p>
+<p>o	Still assumes a linear relationship between features and target.</p>
+<p>Summary:</p>
+<p>Ridge Regression needs more testing. The prediction data quickly fall but then stays consistent as it would appear for every day with slight movements which looks realistic, but the fist 5 minute drops says that the data set was not trained on the new data which might be causing this as the Gold price has been steadily increasing for last five Months.</p>
+<p>3. Lasso Regression and Its Role in Gold/USD Price Prediction</p>
+<p>What is Lasso Regression?</p>
+<p>Lasso Regression (Least Absolute Shrinkage and Selection Operator) is a regularized linear regression technique that performs both coefficient shrinkage and feature selection. Unlike Ridge Regression, which uses an L2 penalty (squares of coefficients), Lasso uses an L1 penalty — the sum of the absolute values of the coefficients.</p>
+<p>The Lasso objective function is:</p>
+<p>min⁡β∑i=1m(yi−y^i)2+λ∑j=1n∣βj∣\min_{\beta} \sum_{i=1}^m (y_i - \hat{y}_i)^2 + \lambda \sum_{j=1}^n |\beta_j|</p>
+<p>Where:</p>
+<ul>
+  <li>The first term is the residual sum of squares as in OLS.</li>
+  <li>The second term is the L1 regularization penalty, controlled by the hyperparameter λ\lambda.</li>
+  <li>This L1 penalty tends to shrink some coefficients exactly to zero, effectively selecting a simpler model with fewer features.</li>
+</ul>
+<p>Why Use Lasso Regression for Predicting Gold Prices?</p>
+<p>In financial datasets, many features (including engineered ones like lagged variables, moving averages, or technical indicators) can be redundant or irrelevant. Lasso helps by automatically performing feature selection during training, removing unimportant variables and reducing model complexity. This is especially useful when working with many features or noisy data.</p>
+<p>How I Used Lasso Regression in the Gold vs Dollar Prediction Project</p>
+<p>1.	Feature Engineering:</p>
+<p>The dataset included not only the main predictor (e.g., timestamps) but also additional derived features representing trends, volatility, or past values. Lasso helped identify which of these features were most relevant to predicting Gold prices by shrinking insignificant coefficients to zero.</p>
+<p>2.	Model Training and Tuning:</p>
+<p>I trained the Lasso Regression model on the training data, tuning the λ\lambda parameter (also called alpha in scikit-learn) via cross-validation. This tuning balanced between sparsity (fewer features) and predictive accuracy.</p>
+<p>3.	Feature Selection and Sparsity:</p>
+<p>Due to the L1 penalty, some coefficients became exactly zero, effectively eliminating those features from the model. This improved model interpretability by highlighting only the most influential factors driving Gold price changes.</p>
+<p>4.	Prediction and Performance:</p>
+<p>The Lasso model produced predictions that were more robust to noise by ignoring irrelevant or redundant features. This sparsity helped prevent overfitting, leading to improved generalization on test data compared to standard linear regression.</p>
+<p>5.	Comparisons with Other Models:</p>
+<p>Lasso often provided a more interpretable and compact model than Ridge Regression, especially when many candidate features were involved. It sometimes traded a slight decrease in raw predictive power for better simplicity and insight.</p>
+<p>Benefits and Limitations of Using Lasso Regression Here</p>
+<ul>
+  <li>Benefits:</li>
+</ul>
+<p>o	Performs automatic feature selection by zeroing out less important coefficients.</p>
+<p>o	Reduces model complexity, making results easier to interpret.</p>
+<p>o	Helps prevent overfitting by regularizing coefficients.</p>
+<p>o	Useful when dealing with high-dimensional feature spaces.</p>
+<ul>
+  <li>Limitations:</li>
+</ul>
+<p>o	Can be unstable if features are highly correlated — it may arbitrarily select one feature and ignore others.</p>
+<p>o	Requires careful tuning of the regularization parameter λ\lambda.</p>
+<p>o	Assumes linearity in relationships between features and target.</p>
+<p>Summary:</p>
+<p>Lasso Regression is also similar to Ridge. I will test it again and see if it was an issue with training data set.</p>
+<p>4. Meta Prophet and Its Role in Gold/USD Price Prediction</p>
+<p>What is Meta Prophet?</p>
+<p>Meta Prophet (usually called Facebook Prophet), is an open-source forecasting tool developed by Facebook designed to handle time series data with strong seasonal effects and several seasons of historical data. It is particularly useful for business forecasting tasks where trends, seasonality, and holidays or events influence the target variable.</p>
+<p>Prophet models time series data by decomposing it into three main components:</p>
+<ul>
+  <li>Trend: Long-term increase or decrease in the data.</li>
+  <li>Seasonality: Periodic fluctuations (daily, weekly, yearly).</li>
+  <li>Holidays/Events: Effects of special days or events.</li>
+</ul>
+<p>It uses an additive regression model with piecewise linear or logistic growth trends and flexible seasonality modeled using Fourier series.</p>
+<p>Why Use Meta Prophet for Predicting Gold Prices?</p>
+<p>Financial time series like Gold prices can have complex patterns, including:</p>
+<ul>
+  <li>Long-term trends due to economic factors.</li>
+  <li>Seasonal effects based on market cycles or geopolitical events.</li>
+  <li>Sudden spikes or dips due to unexpected global news.</li>
+</ul>
+<p>Prophet excels in capturing these components even when data has missing points or irregularities, making it a good candidate for forecasting Gold prices.</p>
+<p>How I Used Meta Prophet in the Gold vs Dollar Prediction Project</p>
+<p>1.	Data Preparation:</p>
+<p>The Gold price data was formatted into the specific structure Prophet requires: a dataframe with columns ‘ds’ (date/time) and ‘y’ (target variable, Gold price).</p>
+<p>2.	Trend and Seasonality Modeling:</p>
+<p>Prophet automatically detected and modeled the underlying trend of the Gold prices over time. It also captured seasonal patterns such as possible monthly or quarterly cycles in price movement.</p>
+<p>3.	Incorporating Holidays or Events:</p>
+<p>If relevant financial or geopolitical events impacting Gold prices were known, these could be added as custom holidays/events in the model to improve prediction accuracy.</p>
+<p>4.	Fitting the Model:</p>
+<p>I trained Prophet on historical Gold prices to learn the trend and seasonality components. Its piecewise linear trend fitting helped accommodate shifts in economic conditions or market regimes.</p>
+<p>5.	Forecasting:</p>
+<p>Using the trained Prophet model, I forecasted future Gold prices over the desired horizon (e.g., next 30 days). The model output included confidence intervals reflecting prediction uncertainty.</p>
+<p>6.	Model Evaluation:</p>
+<p>I compared Prophet’s forecasts with actual test data to measure accuracy using metrics such as MAE and RMSE. Prophet often performed well in capturing seasonal fluctuations and sudden changes compared to simple linear models.</p>
+<p>Benefits and Limitations of Using Meta Prophet Here</p>
+<ul>
+  <li>Benefits:</li>
+</ul>
+<p>o	Automatically models multiple seasonalities and trends without extensive feature engineering.</p>
+<p>o	Handles missing data and outliers gracefully.</p>
+<p>o	User-friendly with straightforward tuning options for trend changepoints and seasonality modes.</p>
+<p>o	Provides intuitive visualization of components (trend, seasonality, holidays).</p>
+<ul>
+  <li>Limitations:</li>
+</ul>
+<p>o	Assumes additive model structure — may not fully capture complex nonlinear relationships.</p>
+<p>o	Requires sufficient historical data with seasonal patterns to perform optimally.</p>
+<p>o	Less suited for very high-frequency intraday trading data.</p>
+<p>Summary:</p>
+<p>Meta Prophet (best) provided a robust, interpretable time series forecasting approach that modeled Gold prices’ underlying trends and seasonal effects. It enhanced the prediction pipeline by offering a complementary, domain-informed perspective beyond classical regression techniques.</p>
+<p>Visualization and User Interaction</p>
+<p>I also developed a dynamic visualization dashboard using Plotly, enabling interactive exploration of predicted prices over a specified future horizon. Users can input starting dates and base price levels to customize forecasts.</p>
+<p>The interactive chart displays predicted Gold price movements over the next 24 hours, with 5-minute granularity. Features include:</p>
+<ul>
+  <li>Clean, responsive time axis with readable date and time labels</li>
+  <li>Price lines clearly depicting forecast trends</li>
+  <li>Hover tooltips providing detailed price information at each timestamp</li>
+</ul>
+<p>This visualization empowers users to gain intuitive insights into forecasted price behavior and supports informed decision-making.</p>
+<p>Challenges and Insights</p>
+<p>Working with high-frequency financial data for predicting Gold vs Dollar prices presented several challenges:</p>
+<ul>
+  <li>Managing precise timestamp conversions and ensuring consistent scaling across datasets.</li>
+  <li>Dealing with noisy and volatile price signals, which can confuse predictive models and reduce accuracy.</li>
+  <li>Balancing model complexity to avoid overfitting, while still capturing meaningful patterns for better generalization.</li>
+</ul>
+<p>Despite these challenges, the project underscored the critical role of comprehensive data preprocessing, flexible visualization, and iterative model refinement in building effective forecasting solutions.</p>
+<p>Among the models tested, Meta Prophet performed particularly well. This success can be attributed to its robust handling of trend changes and seasonal components inherent in financial time series, allowing it to adapt to market fluctuations without excessive manual tuning.</p>
+<p>The Ordinary Least Squares (OLS) regression also showed promising results, indicating strong linear relationships in the data. Its performance is expected to improve further with increased training data, which would help the model better generalize to unseen price movements.</p>
+<p>On the other hand, Ridge and Lasso regressions did not perform as strongly in this experiment. This may be due to their sensitivity to noisy data and the limited size of the training set, suggesting that these regularization-based methods might require larger or more feature-rich datasets to unlock their full potential.</p>
+<p>Overall, the experience highlighted that no single model is universally best; combining insights from multiple approaches and refining data quality is key to improving financial forecasting accuracy.</p>
+<p>Future Directions</p>
+<p>There are several promising avenues to enhance the project further:</p>
+<ul>
+  <li>Incorporate additional features such as trading volume, macroeconomic indicators, and technical analysis metrics to enrich the predictive input.</li>
+  <li>Develop a unified training framework that allows multiple models to be trained simultaneously on the same dataset, enabling identification of intersecting patterns and feeding these insights into a correction layer to improve overall prediction accuracy.</li>
+  <li>Experiment with ensemble modelling techniques to combine the strengths of diverse predictors and reduce individual model biases.</li>
+  <li>Implement real-time prediction pipelines and deploy forecasting as a scalable service for practical applications.</li>
+  <li>Explore anomaly detection methods to flag unusual market conditions that can significantly impact price forecasts.</li>
+  <li>In the longer term, build a custom deep learning model using TensorFlow designed specifically for Gold vs Dollar price prediction, leveraging time gaps and sequence modelling to capture complex temporal dependencies and improve forecast precision.</li>
+</ul>
+        </div>
+      </article>
+
+      <footer>
+        <p>© 2025 Lavian Dsouza • <a href="mailto:lavianvishal23@gmail.com">Contact</a></p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
