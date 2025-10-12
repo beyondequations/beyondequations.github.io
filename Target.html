@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavian Dsouza - Data Engineering Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .tech-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-5px);
+            border-left-color: #667eea;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tool-logo {
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+        
+        .tool-logo:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .vanta-bg {
+            min-height: 100vh;
+            width: 100%;
+        }
+        
+        .skill-bar {
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .data-flow {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .data-flow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: flow 3s linear infinite;
+        }
+        
+        @keyframes flow {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Vanta.js Background -->
+    <div id="vanta-bg" class="vanta-bg fixed top-0 left-0 w-full h-full z-0"></div>
+    
+    <!-- Main Content -->
+    <div class="relative z-10">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center px-4 py-20">
+            <div class="text-center max-w-4xl mx-auto bg-white/90 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-2xl">
+                <div class="floating mb-8">
+                    <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
+                        <img src="https://media.licdn.com/dms/image/v2/D5603AQHNnZKEtJzXJQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1722507642476?e=1762992000&v=beta&t=GNONN0FQUJQdgCwJKfsQt0W88wcon_NM008k17GXDmA" alt="Lavian Dsouza" class="w-full h-full rounded-full object-cover">
+                    </div>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent gradient-bg">Lavian Dsouza</h1>
+                <h2 class="text-xl md:text-2xl text-gray-600 mb-6">Data Engineer & Analytics Specialist</h2>
+                <p class="text-lg mb-8 max-w-2xl mx-auto">
+                    Master's in Mathematics | Python | SQL | Java | Scala | Data Visualization | Cloud Infrastructure | Machine Learning
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#skills" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">My Skills</a>
+                    <a href="#tools" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition">Tech Stack</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Summary -->
+        <section class="py-20 px-4 bg-white/80 backdrop-blur-sm">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Professional Summary</h2>
+                <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
+                    <p>Data Engineer and Analytics Specialist with over 8 years of experience in designing, building, and maintaining scalable data pipelines, ETL/ELT processes, and real-time data infrastructure for business intelligence, predictive modeling, and machine learning applications. Proficient in Python, SQL, Java, Scala, Spark, Kafka, Airflow, and cloud platforms including Azure, AWS, and GCP to process TB-scale datasets, ensure data quality, and deliver actionable insights. Proven track record of automating reporting, reducing operational inefficiencies by up to 70%, and collaborating with cross-functional teams to align data solutions with organizational goals. Passionate about leveraging mathematical modeling, AI, and big data technologies to solve complex challenges in finance, logistics, and operations. Google-certified in data analytics and IT automation, with a portfolio showcasing end-to-end projects in geospatial analysis, time-series forecasting, and NLP classification.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 px-4 bg-white/80 backdrop-blur-sm">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Key Skills</h2>
+                
+                <!-- Programming Languages -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="code" class="mr-2"></i> Programming Languages
+                    </h3>
+                    <div class="module-grid">
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" alt="Python" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Python</h4>
+                            <p class="text-sm text-gray-600">Pandas, NumPy, scikit-learn, TensorFlow, PyTorch, Matplotlib, Plotly, FastAPI, SQLAlchemy, PySpark, Dask, Statsmodels, Featuretools</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://logodix.com/logo/542135.jpg" alt="SQL" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">SQL</h4>
+                            <p class="text-sm text-gray-600">Query Optimization, DAX, Power Query, Window Functions, CTEs, Indexing Strategies</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/1200px-Java_programming_language_logo.svg.png" alt="Java" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Java</h4>
+                            <p class="text-sm text-gray-600">Object-oriented programming, backend systems, big data integration</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://pluspng.com/img-png/scala-logo-png-scala-logo-1200x675.png" alt="Scala" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Scala</h4>
+                            <p class="text-sm text-gray-600">Functional programming for JVM, Spark pipelines</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/310px-R_logo.svg.png" alt="R" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">R</h4>
+                            <p class="text-sm text-gray-600">tidyverse, ggplot2, lubridate, data.table, caret, forecast</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.XBxYIVoyd0ss6fe1Ui0G6QHaEW?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Bash" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Bash</h4>
+                            <p class="text-sm text-gray-600">Shell scripting, automation, cron jobs</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/1200px-C_Programming_Language.svg.png" alt="C" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">C</h4>
+                            <p class="text-sm text-gray-600">Systems programming, low-level optimization</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png" alt="C++" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">C++</h4>
+                            <p class="text-sm text-gray-600">High-performance computing, numerical simulations</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="MATLAB" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">MATLAB</h4>
+                            <p class="text-sm text-gray-600">Numerical computing environment, algorithm prototyping</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Mathematica_Logo.svg" alt="Mathematica" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Mathematica</h4>
+                            <p class="text-sm text-gray-600">Computational software, symbolic mathematics</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Gnu-octave-logo.svg" alt="Octave" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Octave</h4>
+                            <p class="text-sm text-gray-600">MATLAB-compatible language, numerical simulations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Big Data Technologies -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="database" class="mr-2"></i> Big Data Technologies
+                    </h3>
+                    <div class="module-grid">
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://aitor-medrano.github.io/iabd2223/hadoop/images/03hadoop-logo.jpg" alt="Hadoop" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Hadoop</h4>
+                            <p class="text-sm text-gray-600">Distributed storage and processing, HDFS, MapReduce</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Spark" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Spark</h4>
+                            <p class="text-sm text-gray-600">Fast data processing engine, Spark SQL, Spark Streaming, MLlib</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.gwnYADWSBMcnlr5eGBQLvgHaEM?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Flink" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Flink</h4>
+                            <p class="text-sm text-gray-600">Stream processing framework, real-time analytics</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://assets.stickpng.com/thumbs/584809c9cef1014c0b5e4909.png" alt="Apache Kafka" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Apache Kafka</h4>
+                            <p class="text-sm text-gray-600">Distributed streaming platform, Kafka Streams, Kafka Connect</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://airflow.apache.org/images/feature-image.png" alt="Apache Airflow" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Apache Airflow</h4>
+                            <p class="text-sm text-gray-600">Workflow orchestration, DAG management, scheduling ETL</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://vectorseek.com/wp-content/uploads/2023/09/Dbt-Logo-Vector.svg-.png" alt="dbt" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">dbt</h4>
+                            <p class="text-sm text-gray-600">Data build tool, analytics engineering, SQL-based transformations</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.bZEslHEBhiD69p4_nuMJuwHaHL?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Delta Lake" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Delta Lake</h4>
+                            <p class="text-sm text-gray-600">Open-source storage layer, ACID transactions on data lakes</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://justkode.kr/post_image/apache-iceberg.png" alt="Apache Iceberg" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Apache Iceberg</h4>
+                            <p class="text-sm text-gray-600">Open table format, versioned datasets</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Warehousing & Storage -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="hard-drive" class="mr-2"></i> Data Warehousing & Storage
+                    </h3>
+                    <div class="module-grid">
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Snowflake_Logo.svg/1280px-Snowflake_Logo.svg.png" alt="Snowflake" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Snowflake</h4>
+                            <p class="text-sm text-gray-600">Cloud data platform, data warehousing, analytics</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://www.pikpng.com/pngl/m/314-3143797_google-big-query-logo-google-bigquery-logo-clipart.png" alt="BigQuery" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">BigQuery</h4>
+                            <p class="text-sm text-gray-600">Serverless data warehouse, analytics on large datasets</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://vectorseek.com/wp-content/uploads/2023/08/Amazon-Redshift-Logo-Vector.svg-.png" alt="Redshift" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Redshift</h4>
+                            <p class="text-sm text-gray-600">Cloud data warehouse, columnar storage</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://vectorseek.com/wp-content/uploads/2023/08/Azure-Synapse-Analytics-Logo-Vector.svg-.png" alt="Azure Synapse Analytics" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Azure Synapse Analytics</h4>
+                            <p class="text-sm text-gray-600">Unified analytics platform, big data and warehousing</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://assets.stickpng.com/images/62c719b5b44be1961554a6de.png" alt="Databricks" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Databricks</h4>
+                            <p class="text-sm text-gray-600">Unified analytics platform, data engineering, machine learning</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://th.bing.com/th/id/R.ddfc3900edaf9b80875839edbc2c22f5?rik=fozjeVfBqkZ4Ug&pid=ImgRaw&r=0" alt="S3" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">S3</h4>
+                            <p class="text-sm text-gray-600">Object storage service, scalable and reliable</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://vectorseek.com/wp-content/uploads/2023/08/Azure-Data-Lake-Storage-Logo-Vector.svg-.png" alt="Azure Data Lake" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Azure Data Lake</h4>
+                            <p class="text-sm text-gray-600">Scalable data lake, hierarchical storage</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.e18HYvyAjp5kqcraT2h0MgHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="PostgreSQL" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">PostgreSQL</h4>
+                            <p class="text-sm text-gray-600">Relational database, indexing, partitioning</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://pngimg.com/uploads/mysql/mysql_PNG23.png" alt="MySQL" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">MySQL</h4>
+                            <p class="text-sm text-gray-600">Relational database, query optimization</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://webimages.mongodb.com/_com_assets/cms/kuyjf3vea2hg34taa-horizontal_default_slate_blue.svg?auto=format%252Ccompress" alt="MongoDB" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">MongoDB</h4>
+                            <p class="text-sm text-gray-600">NoSQL document database, flexible schema</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse1.mm.bing.net/th/id/OIP.SpgLS26IB-3nVSQEL-gLDgHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Redis" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Redis</h4>
+                            <p class="text-sm text-gray-600">In-memory data store, caching, real-time analytics</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://miro.medium.com/max/1280/0*psr1MnkYKiBexVpS.png" alt="Cassandra" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Cassandra</h4>
+                            <p class="text-sm text-gray-600">Distributed NoSQL database, high availability</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://img.favpng.com/11/14/11/neo4j-graph-database-logo-solution-stack-png-favpng-KMi9dK7Ld5MGKj4PCdFNCvhNs.jpg" alt="Neo4j" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Neo4j</h4>
+                            <p class="text-sm text-gray-600">Graph database, relationship analysis</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.4JAZ5IUcE3IHMCuCt8Lc1wAAAA?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="ClickHouse" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">ClickHouse</h4>
+                            <p class="text-sm text-gray-600">Column-oriented database, high-performance analytics</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://th.bing.com/th/id/R.398ee6a725a570b6b4abff9128ed003a?rik=7eOAY7rhMblsPQ&pid=ImgRaw&r=0" alt="SQL Server" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">SQL Server</h4>
+                            <p class="text-sm text-gray-600">Relational database, enterprise analytics</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ETL/ELT & Integration -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="share-2" class="mr-2"></i> ETL/ELT & Integration
+                    </h3>
+                    <div class="module-grid">
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://companieslogo.com/img/orig/INFA-c4767c1c.png?t=1720244492" alt="Informatica IDMC" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Informatica IDMC</h4>
+                            <p class="text-sm text-gray-600">Intelligent Data Management Cloud, ETL/ELT</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://companieslogo.com/img/orig/TLND_BIG-bf3f1655.png?t=1720244494" alt="Talend Data Fabric" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Talend Data Fabric</h4>
+                            <p class="text-sm text-gray-600">Unified data integration</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://assets.stickpng.com/images/62b316e1b223544c209f5e77.png" alt="Fivetran" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Fivetran</h4>
+                            <p class="text-sm text-gray-600">Automated data integration, connectors</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://img.stackshare.io/service/8906/AWS-Glue_4x.png" alt="AWS Glue" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">AWS Glue</h4>
+                            <p class="text-sm text-gray-600">Serverless data integration, ETL</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse2.mm.bing.net/th/id/OIP.VXAs6i28rtOyaEkyg9pwZwHaGB?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Azure Data Factory" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Azure Data Factory</h4>
+                            <p class="text-sm text-gray-600">Cloud-based ETL, orchestration</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse2.mm.bing.net/th/id/OIP.eELWpFXabeQLj58WJPtdUgHaD4?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Oracle GoldenGate" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Oracle GoldenGate</h4>
+                            <p class="text-sm text-gray-600">Real-time data replication</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.CwFqn0RIXFUn8QRK3WCnOQAAAA?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Airbyte" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Airbyte</h4>
+                            <p class="text-sm text-gray-600">Data synchronization, open-source integration</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://styles.redditmedia.com/t5_tg3v8/styles/communityIcon_zw9agyk9ks961.jpg?width=256&format=pjpg&s=3d92812340a940b8086e16bbdfd76ed0418a7e4f" alt="StreamSets" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">StreamSets</h4>
+                            <p class="text-sm text-gray-600">Data pipelines, streaming ETL</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://th.bing.com/th/id/R.13abe30b95574547e54910ea7a1f15fc?rik=GwcHQtZblSDkTw&pid=ImgRaw&r=0" alt="Pentaho" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Pentaho</h4>
+                            <p class="text-sm text-gray-600">Open-source ETL, business analytics</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse1.mm.bing.net/th/id/OIP.TJWKvOztUCeXvp0fs4fgQwAAAA?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Matillion" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Matillion</h4>
+                            <p class="text-sm text-gray-600">Cloud ETL, data transformation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud Platforms -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="cloud" class="mr-2"></i> Cloud Platforms
+                    </h3>
+                    <div class="module-grid">
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Microsoft_Azure_Logo.svg/1200px-Microsoft_Azure_Logo.svg.png" alt="Azure" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Azure</h4>
+                            <p class="text-sm text-gray-600">Data Factory, Synapse, Blob Storage</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png" alt="AWS" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">AWS</h4>
+                            <p class="text-sm text-gray-600">S3, Redshift, Glue, Lambda, EMR, Athena</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://www.citypng.com/public/uploads/preview/hd-google-cloud-platform-logo-png-701751694778192rdggykh47g.png" alt="GCP" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">GCP</h4>
+                            <p class="text-sm text-gray-600">BigQuery, Cloud Storage, Dataflow, Vertex AI</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Machine Learning & AI -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="cpu" class="mr-2"></i> Machine Learning & AI
+                    </h3>
+                    <div class="module-grid">
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" alt="scikit-learn" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">scikit-learn</h4>
+                            <p class="text-sm text-gray-600">Machine learning library, regression, classification</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://www.tensorflow.org/images/tf_logo_social.png" alt="TensorFlow" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">TensorFlow</h4>
+                            <p class="text-sm text-gray-600">Deep learning framework, neural networks</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://pytorch.org/assets/images/logo-icon.svg" alt="PyTorch" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">PyTorch</h4>
+                            <p class="text-sm text-gray-600">Deep learning framework, research and production</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://th.bing.com/th/id/R.ffba5a5b2fe9cad8a3a4cf40c0cbe288?rik=%2fXJ7aZnowqgztQ&pid=ImgRaw&r=0" alt="XGBoost" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">XGBoost</h4>
+                            <p class="text-sm text-gray-600">Gradient boosting library</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://databricks.com/wp-content/uploads/2020/01/FB-Prophet-logo.png" alt="Prophet" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Prophet</h4>
+                            <p class="text-sm text-gray-600">Time series forecasting</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Hugging Face</h4>
+                            <p class="text-sm text-gray-600">NLP, transformers, text analysis</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.KU7KB_KFXyH1W42rTYb5dQHaCt?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="MLflow" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">MLflow</h4>
+                            <p class="text-sm text-gray-600">ML lifecycle management, experiment tracking</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://lightgbm.readthedocs.io/en/latest/_static/images/LightGBM_logo_black_text.svg" alt="LightGBM" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">LightGBM</h4>
+                            <p class="text-sm text-gray-600">Gradient boosting framework</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://th.bing.com/th/id/R.484d31a54d6dd6f639363ad5ec4b94b7?rik=WNQkPAAJMv0FEg&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fc%2fcc%2fCatBoostLogo.png&ehk=UlIP1JWZEXGwbdSV%2bL9kNryOtGRys7xdDV2WmxDs3FM%3d&risl=&pid=ImgRaw&r=0" alt="CatBoost" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">CatBoost</h4>
+                            <p class="text-sm text-gray-600">Gradient boosting on decision trees</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://keras.io/img/logo.png" alt="Keras" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Keras</h4>
+                            <p class="text-sm text-gray-600">High-level neural networks API</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://opencv.org/wp-content/uploads/2020/07/OpenCV_logo_no_text_.png" alt="OpenCV" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">OpenCV</h4>
+                            <p class="text-sm text-gray-600">Computer vision library</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Visualization & BI -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="bar-chart-2" class="mr-2"></i> Data Visualization & BI
+                    </h3>
+                    <div class="module-grid">
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse2.mm.bing.net/th/id/OIP.ZT5zsMj1BW9yERM7N05LfgHaEK?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Power BI" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Power BI</h4>
+                            <p class="text-sm text-gray-600">Business intelligence tool, dashboards</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.O53hQPs0k17O3yjUkNHeEwHaFF?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tableau" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Tableau</h4>
+                            <p class="text-sm text-gray-600">Data visualization software, reporting</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.yuN517T2Ged-3vBHMYG7jwAAAA?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="MicroStrategy" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">MicroStrategy</h4>
+                            <p class="text-sm text-gray-600">Enterprise analytics</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse2.mm.bing.net/th/id/OIP.q4xNo2DqPk52YlpYp6QwMAHaIP?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Plotly" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Plotly</h4>
+                            <p class="text-sm text-gray-600">Interactive graphing library</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://matplotlib.org/_static/logo_dark.svg" alt="Matplotlib" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Matplotlib</h4>
+                            <p class="text-sm text-gray-600">Plotting library, Python visualizations</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://ggplot2.tidyverse.org/logo.png" alt="ggplot2" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">ggplot2</h4>
+                            <p class="text-sm text-gray-600">Data visualization in R</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://seaborn.pydata.org/_images/logo-tall-lightbg.svg" alt="Seaborn" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Seaborn</h4>
+                            <p class="text-sm text-gray-600">Statistical data visualization</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://pipedream.com/s.v0/app_mqehqz/logo/96" alt="Looker" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Looker</h4>
+                            <p class="text-sm text-gray-600">Business intelligence and visualization</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.0CTQu5RcpcAN5-HfQKl1mQHaHH?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Superset" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Superset</h4>
+                            <p class="text-sm text-gray-600">Open-source BI tool</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse1.mm.bing.net/th/id/OIP.qGiOz3fstOkWPLde7egi-wHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Dash" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Dash</h4>
+                            <p class="text-sm text-gray-600">Python web app framework for dashboards</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://th.bing.com/th/id/R.20caf36fcb6f6857cc540b569c47524b?rik=sWhAPRCKoUZBqQ&pid=ImgRaw&r=0" alt="Kibana" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Kibana</h4>
+                            <p class="text-sm text-gray-600">Data visualization for Elasticsearch</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Governance & Quality -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="shield" class="mr-2"></i> Data Governance & Quality
+                    </h3>
+                    <div class="module-grid">
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.1mrSf6BoggHCfmcf8jTm_AHaDP?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Collibra" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Collibra</h4>
+                            <p class="text-sm text-gray-600">Data governance platform</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://companieslogo.com/img/orig/INFA-c4767c1c.png?t=1720244492" alt="Informatica Axon" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Informatica Axon</h4>
+                            <p class="text-sm text-gray-600">Data governance tool</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://th.bing.com/th/id/R.8e9e97d5a9b9dcbeb7826430886afe0c?rik=Y45RO6HovjgfPQ&pid=ImgRaw&r=0" alt="Alation" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Alation</h4>
+                            <p class="text-sm text-gray-600">Data catalog platform</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse2.mm.bing.net/th/id/OIP.W-81SJrWk7vKaORZHCyc9wHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Microsoft Purview" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Microsoft Purview</h4>
+                            <p class="text-sm text-gray-600">Data governance service</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://images.ctfassets.net/ycwst8v1r2x5/jbrHhqGtdpbZFhki5MqBp/e6a5f6b567173b39430a1a18d060cb8e/gx_logo_horiz_color.png?w=210&h=56&q=85&fm=webp" alt="Great Expectations" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Great Expectations</h4>
+                            <p class="text-sm text-gray-600">Data quality tool, validation</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.UMkik0_hFrqy3Ut2ilfYmQHaD3?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Monte Carlo" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Monte Carlo</h4>
+                            <p class="text-sm text-gray-600">Data observability platform</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DevOps & Infrastructure -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="git-branch" class="mr-2"></i> DevOps & Infrastructure
+                    </h3>
+                    <div class="module-grid">
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png" alt="Docker" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Docker</h4>
+                            <p class="text-sm text-gray-600">Containerization platform</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/2109px-Kubernetes_logo_without_workmark.svg.png" alt="Kubernetes" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Kubernetes</h4>
+                            <p class="text-sm text-gray-600">Container orchestration, scaling</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" alt="Git" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Git</h4>
+                            <p class="text-sm text-gray-600">Version control system</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://th.bing.com/th/id/R.8c8b9fe2210785205c5f8c78f385253b?rik=tksazEPbZxKmwA&pid=ImgRaw&r=0" alt="JIRA" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">JIRA</h4>
+                            <p class="text-sm text-gray-600">Issue tracking tool</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.P6K6-tlCOCi3FzMGaT_vWAHaE8?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Jenkins" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Jenkins</h4>
+                            <p class="text-sm text-gray-600">CI/CD automation</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://miro.medium.com/v2/resize:fit:1358/1*b33nAL99lgKHqX5rD5HKNw.png" alt="GitHub Actions" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">GitHub Actions</h4>
+                            <p class="text-sm text-gray-600">CI/CD workflows</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.mf7AtgTsoEJJBHfZrZNKDAAAAA?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Terraform" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Terraform</h4>
+                            <p class="text-sm text-gray-600">Infrastructure as Code</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://th.bing.com/th/id/R.d1165ee4dcb4f9f179130ee6eebd53f3?rik=eq0OsyYvhkb%2fjQ&pid=ImgRaw&r=0" alt="ELK Stack" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">ELK Stack</h4>
+                            <p class="text-sm text-gray-600">Elasticsearch, Logstash, Kibana for logging and monitoring</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <i data-feather="check" class="h-8 w-8 mx-auto mb-2 text-gray-600"></i>
+                            <h4 class="font-semibold mb-2">Serverless</h4>
+                            <p class="text-sm text-gray-600">Lambda, Azure Functions, GCP Functions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business & ERP Tools -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="briefcase" class="mr-2"></i> Business & ERP Tools
+                    </h3>
+                    <div class="module-grid">
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse2.mm.bing.net/th/id/OIP.peg7kYTtpfxrSWZEurpBTQHaEK?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Microsoft Dynamics 365" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Microsoft Dynamics 365</h4>
+                            <p class="text-sm text-gray-600">ERP system</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.0YLSmPncEIH93o6Jtylj3QHaCx?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Oracle Fusion ERP/HCM" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Oracle Fusion ERP/HCM</h4>
+                            <p class="text-sm text-gray-600">Cloud ERP</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://logos-world.net/wp-content/uploads/2020/10/Salesforce-Logo.png" alt="Salesforce" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Salesforce</h4>
+                            <p class="text-sm text-gray-600">CRM platform</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse1.mm.bing.net/th/id/OIP.dW6_UTxsnqntJQMVo-lKUAHaEn?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="HubSpot" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">HubSpot</h4>
+                            <p class="text-sm text-gray-600">Marketing and sales platform</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://download.logo.wine/logo/SharePoint/SharePoint-Logo.wine.png" alt="SharePoint" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">SharePoint</h4>
+                            <p class="text-sm text-gray-600">Collaboration tool</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://i0.wp.com/dhyey.com/wp-content/uploads/2022/12/MicrosoftTeams-image-199.png?resize=1024%2C1024&ssl=1" alt="Power Apps" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Power Apps</h4>
+                            <p class="text-sm text-gray-600">Low-code app development</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://th.bing.com/th/id/R.880db81ee9f49c0a230c85c5681035aa?rik=jy6qGiuPRFuJ9A&pid=ImgRaw&r=0" alt="SAP CRM" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">SAP CRM</h4>
+                            <p class="text-sm text-gray-600">Enterprise CRM</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.4sHoBdS_BZGLR21AZi8wwAHaEK?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="QuickBooks" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">QuickBooks</h4>
+                            <p class="text-sm text-gray-600">Accounting software</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Concepts & Tools -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="tool" class="mr-2"></i> Other Concepts & Tools
+                    </h3>
+                    <div class="module-grid">
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <i data-feather="check" class="h-8 w-8 mx-auto mb-2 text-gray-600"></i>
+                            <h4 class="font-semibold mb-2">Real-time Data Processing</h4>
+                            <p class="text-sm text-gray-600">Kafka Streams, Spark Streaming, Flink</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <i data-feather="check" class="h-8 w-8 mx-auto mb-2 text-gray-600"></i>
+                            <h4 class="font-semibold mb-2">API Development</h4>
+                            <p class="text-sm text-gray-600">RESTful, GraphQL, FastAPI, Flask</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <i data-feather="check" class="h-8 w-8 mx-auto mb-2 text-gray-600"></i>
+                            <h4 class="font-semibold mb-2">Data Modeling</h4>
+                            <p class="text-sm text-gray-600">Dimensional, Star/Snowflake Schemas, ER diagrams</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <i data-feather="check" class="h-8 w-8 mx-auto mb-2 text-gray-600"></i>
+                            <h4 class="font-semibold mb-2">Unstructured Data Handling</h4>
+                            <p class="text-sm text-gray-600">JSON, XML, text processing, NLP preprocessing</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <i data-feather="check" class="h-8 w-8 mx-auto mb-2 text-gray-600"></i>
+                            <h4 class="font-semibold mb-2">Multi-node Clusters</h4>
+                            <p class="text-sm text-gray-600">Distributed computing, Hadoop/Spark clusters</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <i data-feather="check" class="h-8 w-8 mx-auto mb-2 text-gray-600"></i>
+                            <h4 class="font-semibold mb-2">Multiprocessing (joblib, Dask)</h4>
+                            <p class="text-sm text-gray-600">Parallel processing</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://th.bing.com/th/id/R.e0b14c5718b93c3205706f90d9ef3e2a?rik=7NhLqaO23vXhPg&pid=ImgRaw&r=0" alt="NetworkX" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">NetworkX</h4>
+                            <p class="text-sm text-gray-600">Graph Theory, network algorithms</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <i data-feather="check" class="h-8 w-8 mx-auto mb-2 text-gray-600"></i>
+                            <h4 class="font-semibold mb-2">Statistical Inference</h4>
+                            <p class="text-sm text-gray-600">Hypothesis testing, A/B testing</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <i data-feather="check" class="h-8 w-8 mx-auto mb-2 text-gray-600"></i>
+                            <h4 class="font-semibold mb-2">Operations Research</h4>
+                            <p class="text-sm text-gray-600">Optimization, linear programming</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <i data-feather="check" class="h-8 w-8 mx-auto mb-2 text-gray-600"></i>
+                            <h4 class="font-semibold mb-2">PACE Framework</h4>
+                            <p class="text-sm text-gray-600">Project management methodology</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.F_jbFUACTYBgzkQkUSEEEQHaIl?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Jupyter" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Jupyter</h4>
+                            <p class="text-sm text-gray-600">Interactive notebooks</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://i2.wp.com/1.bp.blogspot.com/-WSgTq36W9ac/X-K1C2qZciI/AAAAAAAAB4I/JMMUoizfp4saV1dVeR14N-M2vDG-Kpu0gCLcBGAsYHQ/s636/Cisco%2BPacket%2BTracer.png" alt="Cisco Packet Tracer" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Cisco Packet Tracer</h4>
+                            <p class="text-sm text-gray-600">Network simulation</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://w7.pngwing.com/pngs/708/366/png-transparent-wireshark-packet-analyzer-computer-software-protocol-analyzer-leopard-shark.png" alt="Wireshark" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Wireshark</h4>
+                            <p class="text-sm text-gray-600">Packet analysis</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://logos-world.net/wp-content/uploads/2021/02/Microsoft-Office-365-Emblem.png" alt="Office 365" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Office 365</h4>
+                            <p class="text-sm text-gray-600">Productivity suite</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse2.mm.bing.net/th/id/OIP.GdmQrKERauTzBe7Ma0jmvQHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Microsoft Teams" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Microsoft Teams</h4>
+                            <p class="text-sm text-gray-600">Collaboration platform</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Flow Visualization -->
+        <section class="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-700 text-white">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">End-to-End Data Pipeline Expertise</h2>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12">
+                    <div class="grid md:grid-cols-5 gap-6 text-center">
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                                <i data-feather="download" class="text-2xl"></i>
+                            </div>
+                            <h3 class="font-semibold">Ingestion</h3>
+                            <p class="text-sm opacity-80 mt-2">Batch & Streaming</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                                <i data-feather="refresh-cw" class="text-2xl"></i>
+                            </div>
+                            <h3 class="font-semibold">Transformation</h3>
+                            <p class="text-sm opacity-80 mt-2">ETL/ELT Processes</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                                <i data-feather="database" class="text-2xl"></i>
+                            </div>
+                            <h3 class="font-semibold">Storage</h3>
+                            <p class="text-sm opacity-80 mt-2">Warehouse & Lake</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                                <i data-feather="bar-chart-2" class="text-2xl"></i>
+                            </div>
+                            <h3 class="font-semibold">Analysis</h3>
+                            <p class="text-sm opacity-80 mt-2">BI & Analytics</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                                <i data-feather="activity" class="text-2xl"></i>
+                            </div>
+                            <h3 class="font-semibold">MLOps</h3>
+                            <p class="text-sm opacity-80 mt-2">Model Deployment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section id="experience" class="py-20 px-4 bg-white/80 backdrop-blur-sm">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Professional Experience</h2>
+                <div class="space-y-12">
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-semibold mb-2">Data Analyst / Data Engineer</h3>
+                        <p class="text-gray-600 mb-4">AOTS | Al Shirawi Group, Dubai | Sep 2024 – Present</p>
+                        <ul class="space-y-2 list-disc pl-5">
+                            <li>Designed and implemented scalable ETL/ELT pipelines using Python, SQL, Apache Airflow, and Azure Data Factory to ingest and process real-time data from Microsoft Dynamics 365 and Oracle Fusion ERP, handling over 1M daily events and reducing reporting time by 40%.</li>
+                            <li>Built automated Power BI dashboards integrated with Kafka for streaming data and Snowflake for warehousing, monitoring cross-department KPIs in logistics, finance, and procurement, which decreased overstocking by 20% and improved data accuracy by 25%.</li>
+                            <li>Modeled and validated large-scale datasets (TB-level) from ERP systems using Spark and dbt, incorporating data governance with Great Expectations to ensure quality during UAT/QA, resulting in 70% reduction in manual effort for anomaly detection and compliance reporting.</li>
+                            <li>Developed predictive models with scikit-learn and Prophet for procurement trends, deploying via MLflow on GCP Vertex AI, enabling data-driven decisions that enhanced operational efficiency across 10+ internal clients.</li>
+                            <li>Collaborated with IT, finance, and audit teams to automate regulatory reporting using AWS Glue and S3 storage, processing multi-million files while maintaining multi-node cluster scalability with Kubernetes.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-semibold mb-2">Technical Support Analyst (ERP & Data Integration)</h3>
+                        <p class="text-gray-600 mb-4">GlowTouch Technologies, Mangaluru | Sep 2021 – May 2024</p>
+                        <ul class="space-y-2 list-disc pl-5">
+                            <li>Built Python scripts and SQL queries for automated log analysis and data synchronization across Microsoft Dynamics 365, Salesforce, and HubSpot CRMs, reducing troubleshooting time by 35% and handling GB-to-TB scale unstructured data.</li>
+                            <li>Created internal compliance dashboards with Power BI and Tableau, integrating real-time ETL workflows via Fivetran and Kafka, which improved process insights and cut response times by 35% for service ticketing.</li>
+                            <li>Resolved data discrepancies in multi-source environments using multiprocessing (joblib) and basic NLP techniques (stop word removal, lemmatization) in Hugging Face, ensuring high-accuracy post-event analytics for global clients.</li>
+                            <li>Supported data extraction and visualization with Excel, SQL, and MicroStrategy, applying DevOps practices with Docker and Git for CI/CD, leading to 25% increase in report reliability and streamlined fraud monitoring.</li>
+                            <li>Collaborated on SQL-driven insights and API integrations for customer behavior analysis, utilizing BigQuery and Delta Lake for warehousing, contributing to operational improvements across US-based SaaS clients.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-semibold mb-2">Customer Service Associate (Data Handling & Support)</h3>
+                        <p class="text-gray-600 mb-4">Amazon, Bangalore | Aug 2020 – Feb 2021</p>
+                        <ul class="space-y-2 list-disc pl-5">
+                            <li>Handled high-volume customer data with Excel trackers and SQL-based root cause analysis, developing ETL scripts to process invoices and ledger issues, reducing discrepancies by 25% and improving fare transparency workflows.</li>
+                            <li>Created internal audit tools and visualizations using Power BI, tracking account appeals and risk triggers with integrated APIs, which streamlined operations and supported SLA compliance for EU and UAE markets.</li>
+                            <li>Processed refund workflows and vendor billing using batch scripting and basic Python automation, incorporating data modeling to handle unstructured data, resulting in 30% faster resolution of disputes.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-semibold mb-2">Senior Representative – Technical Support</h3>
+                        <p class="text-gray-600 mb-4">Concentrix, Mangaluru | Nov 2017 – Oct 2019</p>
+                        <ul class="space-y-2 list-disc pl-5">
+                            <li>Delivered troubleshooting support for systems and usage logs using Python and SQL, automating repeated tasks with Spark for real-time processing, reducing resolution times by 30% across global clients.</li>
+                            <li>Initiated automation of workflows via batch scripting and API development, handling large datasets with Hadoop in multi-million file environments, improving backend incident diagnostics.</li>
+                            <li>Trained junior agents on data integration tools like Talend and ensured data governance compliance, supporting SAP CRM and service desk systems for efficient issue escalation.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-semibold mb-2">Technical Support Engineer</h3>
+                        <p class="text-gray-600 mb-4">Anmol Solutions, Mangaluru | Jun 2016 – Aug 2017</p>
+                        <ul class="space-y-2 list-disc pl-5">
+                            <li>Managed server operations, Active Directory, and network security audits using Wireshark and Cisco tools, processing log data with Python to ensure uptime and data integrity, reducing downtime by 40%.</li>
+                            <li>Configured hardware/software in hybrid environments with Azure Blob Storage for backups, implementing basic ETL processes to handle unstructured data from POS and accounting systems.</li>
+                            <li>Supported small business infrastructure with VPN setups and malware cleanups, applying Terraform for IaC and Docker for containerization, enhancing scalability and system reliability.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="py-20 px-4 bg-gray-100/80 backdrop-blur-sm">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Education</h2>
+                <div class="space-y-8">
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg text-center">
+                        <h3 class="text-xl font-semibold mb-2">M.Sc. in Mathematics</h3>
+                        <p class="text-gray-600">St. Aloysius College, Mangalore | 2013 – 2015</p>
+                    </div>
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg text-center">
+                        <h3 class="text-xl font-semibold mb-2">B.Sc. in Physics, Chemistry, and Mathematics</h3>
+                        <p class="text-gray-600">St. Aloysius College, Mangalore | 2010 – 2013</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-20 px-4 bg-white/80 backdrop-blur-sm">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Contact</h2>
+                <p class="text-xl text-gray-600 mb-12">Lavian Dsouza | Abu Dhabi, UAE | lavianvishal23@gmail.com | +971 54 752 6875 | LinkedIn: https://www.linkedin.com/in/lavian-d-4975442ab/</p>
+                
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                    <div class="grid md:grid-cols-3 gap-8 mb-8">
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                                <i data-feather="mail" class="text-3xl text-blue-600"></i>
+                            </div>
+                            <h3 class="font-semibold mb-2">Email</h3>
+                            <p class="text-blue-600">lavianvishal23@gmail.com</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                                <i data-feather="phone" class="text-3xl text-purple-600"></i>
+                            </div>
+                            <h3 class="font-semibold mb-2">Phone</h3>
+                            <p class="text-purple-600">+971 54 752 6875</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                                <i data-feather="linkedin" class="text-3xl text-purple-600"></i>
+                            </div>
+                            <h3 class="font-semibold mb-2">LinkedIn</h3>
+                            <p class="text-purple-600">lavian-d-4975442ab</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-4">Currently Available For</h3>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <span class="px-4 py-2 bg-white/20 rounded-full">Data Engineering Contracts</span>
+                            <span class="px-4 py-2 bg-white/20 rounded-full">Cloud Migration Projects</span>
+                            <span class="px-4 py-2 bg-white/20 rounded-full">ML Pipeline Development</span>
+                            <span class="px-4 py-2 bg-white/20 rounded-full">Consulting & Architecture</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12 px-4">
+            <div class="max-w-6xl mx-auto text-center">
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="https://www.linkedin.com/in/lavian-d-4975442ab/" class="hover:text-blue-400 transition"><i data-feather="linkedin"></i></a>
+                    <a href="mailto:lavianvishal23@gmail.com" class="hover:text-blue-400 transition"><i data-feather="mail"></i></a>
+                </div>
+                <p class="text-gray-400">© 2025 Lavian Dsouza</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize Vanta.js
+        VANTA.GLOBE({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x667eea,
+            backgroundColor: 0xf8fafc
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+        
+        // Animate skill bars on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.style.width;
+                        entry.target.style.width = '0%';
+                        setTimeout(() => {
+                            entry.target.style.width = width;
+                        }, 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            skillBars.forEach(bar => {
+                observer.observe(bar);
+            });
+        });
+    </script>
+</body>
+</html>
