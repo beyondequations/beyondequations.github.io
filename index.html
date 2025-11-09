@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavian Dsouza - Data Engineering Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .tech-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-5px);
+            border-left-color: #667eea;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tool-logo {
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+        
+        .tool-logo:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .vanta-bg {
+            min-height: 100vh;
+            width: 100%;
+        }
+        
+        .skill-bar {
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .data-flow {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .data-flow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: flow 3s linear infinite;
+        }
+        
+        @keyframes flow {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Vanta.js Background -->
+    <div id="vanta-bg" class="vanta-bg fixed top-0 left-0 w-full h-full z-0"></div>
+    
+    <!-- Main Content -->
+    <div class="relative z-10">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center px-4 py-20">
+            <div class="text-center max-w-4xl mx-auto bg-white/90 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-2xl">
+                <div class="floating mb-8">
+                    <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
+                        <img src="https://media.licdn.com/dms/image/v2/D5603AQHNnZKEtJzXJQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1722507642476?e=1762992000&v=beta&t=GNONN0FQUJQdgCwJKfsQt0W88wcon_NM008k17GXDmA" alt="Lavian Dsouza" class="w-full h-full rounded-full object-cover">
+                    </div>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent gradient-bg">Lavian Dsouza</h1>
+                <h2 class="text-xl md:text-2xl text-gray-600 mb-6">Data Engineer & Analytics Specialist</h2>
+                <p class="text-lg mb-8 max-w-2xl mx-auto">
+                    Master's in Mathematics | Python | SQL | Java | Scala | Data Visualization | Cloud Infrastructure | Machine Learning
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#skills" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">My Skills</a>
+                    <a href="#tools" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition">Tech Stack</a>
+                    <a href="index1.html" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition">Blog</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Summary -->
+        <section class="py-20 px-4 bg-white/80 backdrop-blur-sm">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Professional Summary</h2>
+                <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
+                    <p>Mathematical problem solver and results-driven Data Engineer with 8+ years of experience designing and optimizing scalable data pipelines, ETL workflows, and analytical systems. Expert in applying graph theory, statistical inference, and operations research to deliver actionable insights, reduce processing times by up to 70%, and enhance system efficiency. Proficient in Python, SQL, Apache Spark, and cloud platforms (AWS, Azure, GCP, Oracle), with strong expertise in data governance, automation, and predictive analytics. Passionate about transforming raw data into high-impact solutions in finance, logistics, and AI domains.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 px-4 bg-white/80 backdrop-blur-sm">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Key Skills and Tools</h2>
+                                <!-- Programming Languages -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="code" class="mr-2"></i> Programming & Languages
+                    </h3>
+                    <div class="module-grid">
+                        <div class="tool">
+                           <h4>Python</h4>
+                           <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" alt="Python logo">
+                           <p>Python is a programming language that lets you work quickly and integrate systems more effectively. The official home of the Python Programming Language.</p>
+                           <a href="https://www.python.org/doc/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Pandas</h4>
+                           <img src="https://pandas.pydata.org/static/img/pandas_secondary.svg" alt="Pandas logo">
+                           <p>pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language.</p>
+                           <a href="https://pandas.pydata.org/docs/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>NumPy</h4>
+                           <img src="https://numpy.org/images/logo.svg" alt="NumPy logo">
+                           <p>NumPy is the fundamental package for scientific computing with Python. It is the fundamental package for scientific computing with Python.</p>
+                           <a href="https://numpy.org/doc/">Official Documentation</a>
+                        </div>
+    
+						<div class="tool">
+                           <h4>Scikit-learn</h4>
+                           <img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" alt="Scikit-learn logo">
+                           <p>scikit-learn is an open source Python module that integrates a range of state-of-the-art machine learning algorithms for medium-scale supervised and unsupervised problems. This package focuses on bringing machine learning to non-specialists using a general-purpose high-level language.</p>
+                           <a href="https://scikit-learn.org/stable/documentation.html">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Matplotlib</h4>
+                            <img src="https://matplotlib.org/stable/_images/sphx_glr_logos2_001.png" alt="Matplotlib logo">
+                            <p>Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. Matplotlib makes easy things easy and hard things possible.</p>
+                            <a href="https://matplotlib.org/stable/contents.html">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                             <h4>Plotly</h4>
+                             <img src="https://dash.plotly.com/assets/images/logo-plotly.png" alt="Plotly logo">
+                             <p>Plotly is a graphing library that makes interactive, publication-quality graphs online. Examples of how to make line plots, scatter plots, area charts, bar charts, error bars, box plots, histograms, heatmaps, subplots, multiple-axes, polar charts, and bubble charts.</p>
+                             <a href="https://plotly.com/python/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                             <h4>SQL</h4>
+                             <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png" alt="SQL logo">
+                             <p>SQL is a domain-specific language used in programming and designed for managing data held in a relational database management system, or for stream processing in a relational data stream management system.</p>
+                             <a href="https://en.wikibooks.org/wiki/SQL">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                             <h4>R</h4>
+                             <img src="https://www.r-project.org/logo/Rlogo.svg" alt="R logo">
+                             <p>R is a programming language for statistical computing and data visualization. It has been adopted in the fields of data mining, bioinformatics, and data analysis.</p>
+                             <a href="https://www.r-project.org/doc.html">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                             <h4>DAX</h4>
+                             <img src="https://docs.microsoft.com/en-us/power-bi/transform-model/desktop-quickstart-learn-dax-basics/media/desktop-quickstart-learn-dax-basics/qsdax_1_concept.png" alt="DAX logo">
+                             <p>Data Analysis Expressions (DAX) is a formula expression language used in Analysis Services, Power BI, and Power Pivot in Excel. DAX formulas include functions, operators, and values to perform advanced calculations and queries on data in related tables and columns in tabular data models.</p>
+                             <a href="https://docs.microsoft.com/en-us/dax/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                             <h4>Bash</h4>
+                             <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Gnu-bash-logo.svg" alt="Bash logo">
+                             <p>Bash is a Unix shell and command language written by Brian Fox for the GNU Project as a free software replacement for the Bourne shell.</p>
+                             <a href="https://www.gnu.org/software/bash/manual/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                             <h4>PowerShell</h4>
+                             <img src="https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.4/media/powershell_logo.png" alt="PowerShell logo">
+                             <p>PowerShell is a task automation and configuration management program from Microsoft, consisting of a command-line shell and the associated scripting language.</p>
+                             <a href="https://docs.microsoft.com/en-us/powershell/">Official Documentation</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Compute / Cloud -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="cloud" class="mr-2"></i> Data Engineering & ETL
+                    </h3>
+                    <div class="module-grid">
+                        <div class="tool">
+                            <h4>Apache Spark</h4>
+                            <img src="https://spark.apache.org/images/spark-logo-trademark.png" alt="Apache Spark logo">
+                            <p>Apache Spark is a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters.</p>
+                            <a href="https://spark.apache.org/docs/latest/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Flink</h4>
+                            <img src="https://flink.apache.org/img/logo/png/500/flink_squirrel_500.png" alt="Flink logo">
+                            <p>Apache Flink is a framework and distributed processing engine for stateful computations over unbounded and bounded data streams.</p>
+                            <a href="https://flink.apache.org/flink-architecture.html">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Dask</h4>
+                            <img src="https://docs.dask.org/en/latest/_images/dask_horizontal.svg" alt="Dask logo">
+                            <p>Dask provides advanced parallelism for analytics, enabling performance at scale for the tools you love. Dask's schedulers scale to thousand-node clusters and its algorithms have been tested on some of the largest supercomputers in the world.</p>
+                            <a href="https://docs.dask.org/en/stable/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Ray</h4>
+                            <img src="https://docs.ray.io/en/latest/_static/ray_header_logo.png" alt="Ray logo">
+                            <p>Ray is an open-source unified compute framework that makes it easy to scale AI and Python workloads — from reinforcement learning to deep learning to tuning, serving, and model building.</p>
+                            <a href="https://docs.ray.io/en/latest/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>dbt</h4>
+                            <img src="https://docs.getdbt.com/img/dbt-logo.png" alt="dbt logo">
+                            <p>dbt™ is a SQL-first transformation workflow that lets teams quickly and collaboratively deploy analytics code following software engineering best practices like modularity, portability, CI/CD, and documentation.</p>
+                            <a href="https://docs.getdbt.com/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Airbyte</h4>
+                            <img src="https://miro.medium.com/1*JyqCv6n8CNR3K2eBnbfQIQ.png" alt="Airbyte logo">
+                            <p>Airbyte is an open-source data integration platform that syncs data from applications, APIs & databases to data warehouses, lakes and other destinations.</p>
+                            <a href="https://docs.airbyte.com/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Debezium</h4>
+                            <img src="https://debezium.io/assets/images/color_black_debezium_type_1200px.png" alt="Debezium logo">
+                            <p>Debezium is an open source distributed platform for change data capture. Start it up, point it at your databases, and your apps can start responding to all of the inserts, updates, and deletes that other apps commit to your databases.</p>
+                            <a href="https://debezium.io/documentation/reference/stable/index.html">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Airflow</h4>
+                            <img src="https://airflow.apache.org/images/airflow_logo.png" alt="Airflow logo">
+                            <p>Apache Airflow® is an open-source platform for developing, scheduling, and monitoring batch-oriented workflows.</p>
+                            <a href="https://airflow.apache.org/docs/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Prefect</h4>
+                            <img src="https://docs.prefect.io/img/prefect-logo-dark.svg" alt="Prefect logo">
+                            <p>Prefect is a workflow orchestration framework for building resilient data pipelines in Python.</p>
+                            <a href="https://docs.prefect.io/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Dagster</h4>
+                            <img src="https://dagster.io/images/logo.svg" alt="Dagster logo">
+                            <p>Dagster is an orchestration platform for the development, production, and observation of data assets.</p>
+                            <a href="https://docs.dagster.io/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Great Expectations</h4>
+                            <img src="https://docs.greatexpectations.io/assets/images/gx-logo.png" alt="Great Expectations logo">
+                            <p>Great Expectations is the leading tool for validating, documenting, and profiling your data to maintain quality and improve communication between teams.</p>
+                            <a href="https://docs.greatexpectations.io/docs/">Official Documentation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Operating System -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="hard-drive" class="mr-2"></i> Databases & Storage
+                    </h3>
+                    <div class="module-grid">
+                        <div class="tool">
+                           <h4>PostgreSQL</h4>
+                           <img src="https://www.postgresql.org/media/img/about/press/elephant.png" alt="PostgreSQL logo">
+                           <p>PostgreSQL is a powerful, open source object-relational database system with over 35 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.</p>
+                           <a href="https://www.postgresql.org/docs/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>MySQL</h4>
+                           <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" alt="MySQL logo">
+                           <p>MySQL is an open-source relational database management system.</p>
+                           <a href="https://dev.mysql.com/doc/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>CockroachDB</h4>
+                           <img src="https://cockroachlabs.com/images/logos/cockroach-labs-logo.png" alt="CockroachDB logo">
+                           <p>CockroachDB is the SQL database for building global, scalable cloud services that survive disasters.</p>
+                           <a href="https://www.cockroachlabs.com/docs/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>TiDB</h4>
+                           <img src="https://download.pingcap.com/images/tidb-logo.svg" alt="TiDB logo">
+                           <p>TiDB is an open-source, cloud-native, distributed SQL database for elastic scale and real-time analytics.</p>
+                           <a href="https://docs.pingcap.com/tidb/stable">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Redis</h4>
+                           <img src="https://redis.io/images/redis-white.png" alt="Redis logo">
+                           <p>Redis is an open source (BSD licensed), in-memory data structure store used as a database, cache, message broker, and streaming engine.</p>
+                           <a href="https://docs.redis.com/latest/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>MongoDB</h4>
+                           <img src="https://www.mongodb.com/assets/images/global/favicon.ico" alt="MongoDB logo">
+                           <p>MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.</p>
+                           <a href="https://docs.mongodb.com/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Neo4j</h4>
+                           <img src="https://dist.neo4j.com/wp-content/uploads/2021/02/20210225-neo4j-logo-color-1.png" alt="Neo4j logo">
+                           <p>Neo4j is the world’s leading graph database, with native graph storage and processing.</p>
+                           <a href="https://neo4j.com/docs/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Cassandra</h4>
+                           <img src="https://cassandra.apache.org/_/img/logo.png" alt="Cassandra logo">
+                           <p>Apache Cassandra® is a widely used NoSQL database providing linear scalability and fault tolerance on commodity hardware or cloud infrastructure.</p>
+                           <a href="https://cassandra.apache.org/doc/latest/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Elasticsearch</h4>
+                           <img src="https://www.elastic.co/static-res/images/elastic-logo-200.png" alt="Elasticsearch logo">
+                           <p>Elasticsearch is a distributed, RESTful search and analytics engine capable of addressing a growing number of use cases.</p>
+                           <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>InfluxDB</h4>
+                           <img src="https://www.influxdata.com/wp-content/uploads/influxdb-logo.svg" alt="InfluxDB logo">
+                           <p>InfluxDB is the open source time series database. It is designed to handle high write and query loads and is an integral component of the TICK stack.</p>
+                           <a href="https://docs.influxdata.com/influxdb/v2.0/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>DuckDB</h4>
+                           <img src="https://duckdb.org/images/logo-dl.png" alt="DuckDB logo">
+                           <p>DuckDB is an in-process SQL OLAP database management system.</p>
+                           <a href="https://duckdb.org/docs/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>ClickHouse</h4>
+                           <img src="https://clickhouse.com/images/company/clickhouse-logo.svg" alt="ClickHouse logo">
+                           <p>ClickHouse is an open-source column-oriented database management system that allows generating analytical data reports in real-time using SQL queries.</p>
+                           <a href="https://clickhouse.com/docs/en/">Official Documentation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Storage -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="database" class="mr-2"></i> Data Lakes & OLAP
+                    </h3>
+                    <div class="module-grid">
+                        <div class="tool">
+                           <h4>Delta Lake</h4>
+                           <img src="https://delta.io/images/logo.png" alt="Delta Lake logo">
+                           <p>Delta Lake is an open-source storage layer that brings reliable lakehouse architecture to data lakes.</p>
+                           <a href="https://delta.io/docs/latest/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Iceberg</h4>
+                           <img src="https://iceberg.apache.org/images/iceberg-logo.png" alt="Iceberg logo">
+                           <p>Apache Iceberg is an open table format for huge analytic datasets.</p>
+                           <a href="https://iceberg.apache.org/docs/latest/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Hudi</h4>
+                           <img src="https://hudi.apache.org/assets/images/logo-big.png" alt="Hudi logo">
+                           <p>Apache Hudi is an open-source data management framework used to simplify incremental data processing and data pipeline development.</p>
+                           <a href="https://hudi.apache.org/docs/overview/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Trino</h4>
+                           <img src="https://trino.io/assets/images/trino-logo.png" alt="Trino logo">
+                           <p>Trino is a distributed SQL query engine designed to query large data sets distributed over one or more heterogeneous data sources.</p>
+                           <a href="https://trino.io/docs/current/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Presto</h4>
+                           <img src="https://prestodb.io/images/presto-logo.png" alt="Presto logo">
+                           <p>Presto is an open source distributed SQL query engine for running interactive analytic queries against data sources of all sizes ranging from gigabytes to petabytes.</p>
+                           <a href="https://prestodb.io/docs/current/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Druid</h4>
+                           <img src="https://druid.apache.org/img/logo.png" alt="Druid logo">
+                           <p>Apache Druid is a real-time analytics database designed for fast slice-and-dice analytics ("OLAP" queries) on large data sets.</p>
+                           <a href="https://druid.apache.org/docs/latest/design/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Doris</h4>
+                           <img src="https://doris.apache.org/images/logo.png" alt="Doris logo">
+                           <p>Apache Doris is an easy-to-use, high-performance and real-time analytical database based on MPP architecture, known for its high concurrency and low latency.</p>
+                           <a href="https://doris.apache.org/docs/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>StarRocks</h4>
+                           <img src="https://starrocks.io/images/starrocks-logo.png" alt="StarRocks logo">
+                           <p>StarRocks is a next-gen, high-performance analytical data warehouse that enables real-time, multi-dimensional, and highly concurrent data analysis.</p>
+                           <a href="https://docs.starrocks.io/">Official Documentation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SQL / Data Warehouse -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="database" class="mr-2"></i> Analytics & Visualization
+                    </h3>
+                    <div class="module-grid">
+                        <div class="tool">
+                           <h4>Power BI</h4>
+                           <img src="https://powerbi.microsoft.com/pictures/shared/social/social-default-image.png" alt="Power BI logo">
+                           <p>Power BI is a collection of software services, apps, and connectors that work together to turn your unrelated sources of data into coherent, visually immersive, and interactive insights.</p>
+                           <a href="https://docs.microsoft.com/en-us/power-bi/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Tableau</h4>
+                           <img src="https://www.tableau.com/sites/default/files/2021-10/tableau_blue_logo_rgb_2021.png" alt="Tableau logo">
+                           <p>Tableau is visual analytics software for business intelligence. See and understand any data with Tableau.</p>
+                           <a href="https://help.tableau.com/current/pro/desktop/en-us/default.htm">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Superset</h4>
+                           <img src="https://superset.apache.org/assets/images/superset-logo-horiz.png" alt="Superset logo">
+                           <p>Apache Superset is a modern data exploration and visualization platform.</p>
+                           <a href="https://superset.apache.org/docs/intro/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Metabase</h4>
+                           <img src="https://www.metabase.com/images/logo.svg" alt="Metabase logo">
+                           <p>Metabase is an open source business intelligence tool. It lets you ask questions about your data, and displays answers in formats that make sense, whether that's a bar graph or a detailed table.</p>
+                           <a href="https://www.metabase.com/docs/latest/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Redash</h4>
+                           <img src="https://redash.io/assets/images/logo.png" alt="Redash logo">
+                           <p>Redash helps you make sense of your data. Connect and query your data sources, build dashboards to visualize data and share them with your company.</p>
+                           <a href="https://redash.io/help/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Dash</h4>
+                           <img src="https://dash.plotly.com/assets/images/logo.png" alt="Dash logo">
+                           <p>Dash is a Python framework for building analytical web applications. No JavaScript required.</p>
+                           <a href="https://dash.plotly.com/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Streamlit</h4>
+                           <img src="https://streamlit.io/images/brand/streamlit-logo-primary-colormark-darktext.svg" alt="Streamlit logo">
+                           <p>Streamlit is an open-source Python library that makes it easy to create and share beautiful, custom web apps for machine learning and data science.</p>
+                           <a href="https://docs.streamlit.io/">Official Documentation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Processing - Batch -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="cpu" class="mr-2"></i> ML & AI Tools
+                    </h3>
+                    <div class="module-grid">
+                        <div class="tool">
+                           <h4>MLflow</h4>
+                           <img src="https://mlflow.org/docs/latest/_static/MLflow-logo-final-black.png" alt="MLflow logo">
+                           <p>MLflow is an open source platform to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry.</p>
+                           <a href="https://mlflow.org/docs/latest/index.html">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Kubeflow</h4>
+                           <img src="https://www.kubeflow.org/images/logo.svg" alt="Kubeflow logo">
+                           <p>The Machine Learning Toolkit for Kubernetes.</p>
+                           <a href="https://www.kubeflow.org/docs/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>DVC</h4>
+                           <img src="https://dvc.org/img/logo.png" alt="DVC logo">
+                           <p>Data Version Control or DVC is an open-source tool for data science and machine learning projects. It is designed to make ML models shareable and experiments reproducible.</p>
+                           <a href="https://dvc.org/doc">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>Vertex AI</h4>
+                           <img src="https://cloud.google.com/images/products/vertex-ai/vertex-ai-logo.svg" alt="Vertex AI logo">
+                           <p>Vertex AI is a machine learning (ML) platform that lets you train and deploy ML models and AI applications, and customize large language models (LLMs) for use in your AI-powered applications.</p>
+                           <a href="https://cloud.google.com/vertex-ai/docs/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                           <h4>PaLM 2</h4>
+                           <img src="https://ai.google.dev/static/images/share.png" alt="PaLM 2 logo">
+                           <p>PaLM 2 is a state-of-the-art language model with improved multilingual, reasoning and coding capabilities.</p>
+                           <a href="https://ai.google.dev/palm_docs/">Official Documentation</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Data Visualization & BI -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="bar-chart-2" class="mr-2"></i> Cloud & DevOps
+                    </h3>
+                    <div class="module-grid">
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse2.mm.bing.net/th/id/OIP.ZT5zsMj1BW9yERM7N05LfgHaEK?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Power BI" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Power BI</h4>
+                            <p class="text-sm text-gray-600">Business intelligence tool, dashboards</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.O53hQPs0k17O3yjUkNHeEwHaFF?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tableau" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Tableau</h4>
+                            <p class="text-sm text-gray-600">Data visualization software, reporting</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.yuN517T2Ged-3vBHMYG7jwAAAA?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="MicroStrategy" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">MicroStrategy</h4>
+                            <p class="text-sm text-gray-600">Enterprise analytics</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse2.mm.bing.net/th/id/OIP.q4xNo2DqPk52YlpYp6QwMAHaIP?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Plotly" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Plotly</h4>
+                            <p class="text-sm text-gray-600">Interactive graphing library</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://matplotlib.org/_static/logo_dark.svg" alt="Matplotlib" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Matplotlib</h4>
+                            <p class="text-sm text-gray-600">Plotting library, Python visualizations</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://ggplot2.tidyverse.org/logo.png" alt="ggplot2" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">ggplot2</h4>
+                            <p class="text-sm text-gray-600">Data visualization in R</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://seaborn.pydata.org/_images/logo-tall-lightbg.svg" alt="Seaborn" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Seaborn</h4>
+                            <p class="text-sm text-gray-600">Statistical data visualization</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://pipedream.com/s.v0/app_mqehqz/logo/96" alt="Looker" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Looker</h4>
+                            <p class="text-sm text-gray-600">Business intelligence and visualization</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.0CTQu5RcpcAN5-HfQKl1mQHaHH?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Superset" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Superset</h4>
+                            <p class="text-sm text-gray-600">Open-source BI tool</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://tse1.mm.bing.net/th/id/OIP.qGiOz3fstOkWPLde7egi-wHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Dash" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Dash</h4>
+                            <p class="text-sm text-gray-600">Python web app framework for dashboards</p>
+                        </div>
+                        <div class="data-flow bg-white p-4 rounded-lg shadow-md text-center">
+                            <img src="https://th.bing.com/th/id/R.20caf36fcb6f6857cc540b569c47524b?rik=sWhAPRCKoUZBqQ&pid=ImgRaw&r=0" alt="Kibana" class="h-8 mx-auto mb-2">
+                            <h4 class="font-semibold mb-2">Kibana</h4>
+                            <p class="text-sm text-gray-600">Data visualization for Elasticsearch</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Processing - ETL / Scripting -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="code" class="mr-2"></i> Processing - ETL / Scripting
+                    </h3>
+                    <div class="module-grid">
+                        <div class="tool">
+                            <h4>AWS RDS</h4>
+                            <img src="https://docs.aws.amazon.com/images/AmazonRDS/latest/UserGuide/images/AmazonRDS_Logo.png" alt="AWS RDS logo">
+                            <p>Amazon Relational Database Service (Amazon RDS) is a managed service that makes it easier to set up, operate, and scale a relational database in the cloud.</p>
+                            <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>AWS EMR</h4>
+                            <img src="https://docs.aws.amazon.com/images/emr/latest/ManagementGuide/images/emr_logo.png" alt="AWS EMR logo">
+                            <p>Amazon EMR is the industry-leading cloud big data platform for processing vast amounts of data using open source tools such as Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi, and Presto.</p>
+                            <a href="https://docs.aws.amazon.com/emr/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>AWS Athena</h4>
+                            <img src="https://docs.aws.amazon.com/images/athena/latest/ug/images/athena-logo.png" alt="AWS Athena logo">
+                            <p>Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL.</p>
+                            <a href="https://docs.aws.amazon.com/athena/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Azure Cosmos DB</h4>
+                            <img src="https://docs.microsoft.com/en-us/azure/cosmos-db/media/introduction/azure-cosmos-db.png" alt="Azure Cosmos DB logo">
+                            <p>Azure Cosmos DB is a fully managed NoSQL database service for modern app development.</p>
+                            <a href="https://docs.microsoft.com/en-us/azure/cosmos-db/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Azure Event Hubs</h4>
+                            <img src="https://docs.microsoft.com/en-us/azure/event-hubs/media/event-hubs-about/Azure_event_hubs_architecture.png" alt="Azure Event Hubs logo">
+                            <p>Azure Event Hubs is a big data streaming platform and event ingestion service.</p>
+                            <a href="https://docs.microsoft.com/en-us/azure/event-hubs/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>GCP BigQuery</h4>
+                            <img src="https://cloud.google.com/images/products/bigquery/bigquery-logo.svg" alt="GCP BigQuery logo">
+                            <p>BigQuery is a serverless, highly scalable, and cost-effective multi-cloud data warehouse designed for business agility.</p>
+                            <a href="https://cloud.google.com/bigquery/docs">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>GCP Dataproc</h4>
+                            <img src="https://cloud.google.com/images/products/dataproc/dataproc-logo.svg" alt="GCP Dataproc logo">
+                            <p>Dataproc is a fully managed and highly scalable service for running Apache Spark, Apache Flink, Presto, and 30+ open source tools and frameworks.</p>
+                            <a href="https://cloud.google.com/dataproc/docs">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Snowflake</h4>
+                            <img src="https://docs.snowflake.com/en/_images/logo-snowflake-sans-text.png" alt="Snowflake logo">
+                            <p>Snowflake is a cloud-based data warehousing company that was founded in 2012. It offers a cloud-based data storage and analytics service, generally termed "data warehouse-as-a-service".</p>
+                            <a href="https://docs.snowflake.com/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Dataiku</h4>
+                            <img src="https://www.dataiku.com/wp-content/uploads/2021/06/dataiku-logo.png" alt="Dataiku logo">
+                            <p>Dataiku is the platform for Everyday AI, systemizing the use of data for exceptional business results.</p>
+                            <a href="https://doc.dataiku.com/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Git</h4>
+                            <img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" alt="Git logo">
+                            <p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p>
+                            <a href="https://git-scm.com/doc">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Docker</h4>
+                            <img src="https://www.docker.com/wp-content/uploads/2023/05/symbol_blue-named_logo.png" alt="Docker logo">
+                            <p>Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.</p>
+                            <a href="https://docs.docker.com/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>JIRA</h4>
+                            <img src="https://www.atlassian.com/dam/jcr:5b153a22-38be-4683-81b4-286b5f7308b1/01_Jira-logo.png" alt="JIRA logo">
+                            <p>Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.</p>
+                            <a href="https://www.atlassian.com/software/jira/guides">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Oracle Fusion ERP</h4>
+                            <img src="https://www.oracle.com/a/ocom/img/rc30v0-erp-logo-2021.png" alt="Oracle Fusion ERP logo">
+                            <p>Oracle Fusion Cloud ERP is a cloud-based enterprise resource planning suite for midsize to enterprise-level customers.</p>
+                            <a href="https://docs.oracle.com/en/cloud/saas/financials/24b/farfa/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Microsoft Dynamics 365</h4>
+                            <img src="https://docs.microsoft.com/en-us/dynamics365/media/dynamics-365-logo.svg" alt="Microsoft Dynamics 365 logo">
+                            <p>Dynamics 365 is a set of interconnected, modular SaaS applications and services designed to both transform and enable your core customers, employees, and business activities.</p>
+                            <a href="https://docs.microsoft.com/en-us/dynamics365/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Salesforce</h4>
+                            <img src="https://www.salesforce.com/content/dam/web/en_us/www/images/home/logo-salesforce-m.svg" alt="Salesforce logo">
+                            <p>Salesforce is a customer relationship management solution that brings companies and customers together.</p>
+                            <a href="https://developer.salesforce.com/docs">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>HubSpot</h4>
+                            <img src="https://www.hubspot.com/hubfs/HubSpot_Logos/SVG/hubspot_logo_icon_only.svg" alt="HubSpot logo">
+                            <p>HubSpot offers a full platform of marketing, sales, customer service, and CRM software — plus the methodology, resources, and support — to help businesses grow better.</p>
+                            <a href="https://developers.hubspot.com/docs">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>Power Apps</h4>
+                            <img src="https://docs.microsoft.com/en-us/power-apps/media/powerapps-app-icon.svg" alt="Power Apps logo">
+                            <p>Power Apps is a suite of apps, services, connectors, and data platform that provides a rapid application development environment to build custom apps for your business needs.</p>
+                            <a href="https://docs.microsoft.com/en-us/power-apps/">Official Documentation</a>
+                        </div>
+    
+                        <div class="tool">
+                            <h4>SharePoint</h4>
+                            <img src="https://docs.microsoft.com/en-us/sharepoint/_static/images/sharepoint-logo.svg" alt="SharePoint logo">
+                            <p>SharePoint empowers teamwork with dynamic and productive team sites for every project team, department, and division.</p>
+                            <a href="https://docs.microsoft.com/en-us/sharepoint/dev/">Official Documentation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Processing - DAG / Orchestration -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i data-feather="git-branch" class="mr-2"></i> Certifications
+                    </h3>
+                    <div class="module-grid">
+                        <div class="certification">
+                            <h3>IBM Data Engineering Professional Certificate</h3>
+                            <p>Courses:</p>
+                            <ul>
+                                <li>Introduction to Data Engineering</li>
+                                <li>Python for Data Science, AI & Development</li>
+                                <li>Introduction to Relational Databases (DB2)</li>
+                                <li>Databases and SQL for Data Science with Python</li>
+                                <li>Hands-on Introduction to Linux Commands and Shell Scripting</li>
+                                <li>Relational Database Administration (DBA)</li>
+                                <li>ETL and Data Pipelines with Shell, Airflow and Kafka</li>
+                                <li>Getting Started with Data Warehousing and BI Analytics</li>
+                                <li>Introduction to Big Data with Spark and Hadoop</li>
+                                <li>Data Engineering and Machine Learning using Spark</li>
+                                <li>Data Engineering Capstone Project</li>
+                            </ul>
+                            </div>
+    
+                            <div class="certification">
+                            <h3>Snowflake Data Engineering Professional Certificate</h3>
+                            <p>Courses:</p>
+                            <ul>
+                                <li>Snowflake - The Complete Masterclass (2024 Edition)</li>
+                                <li>Snowflake for Developers, Data Science, AI and ML</li>
+                                <li>Snowflake - SnowPro Core Certification Exam Prep</li>
+                                <li>Snowflake - SnowPro Advanced Data Engineer Certification</li>
+                                <li>Mastering Snowflake Cloud Data Warehouse</li>
+                                <li>Other Snowflake-specific courses from Udemy or Pluralsight</li>
+                            </ul>
+                            </div>
+    
+                            <div class="certification">
+                            <h3>Google Cloud Data Analytics Professional Certificate</h3>
+                            <p>Courses:</p>
+                            <ul>
+                                <li>Google Data Analytics Foundations</li>
+                                <li>Foundations: Data, Data, Everywhere</li>
+                                <li>Ask Questions to Make Data-Driven Decisions</li>
+                                <li>Prepare Data for Exploration</li>
+                                <li>Process Data from Dirty to Clean</li>
+                                <li>Analyze Data to Answer Questions</li>
+                                <li>Share Data Through the Art of Visualization</li>
+                                <li>Data Analysis with R Programming</li>
+                                <li>Google Data Analytics Capstone</li>
+                            </ul>
+                            </div>
+    
+                            <div class="certification">
+                            <h3>AWS Developer Specialization</h3>
+                            <p>Courses:</p>
+                            <ul>
+                                <li>Developing on AWS</li>
+                                <li>AWS Developer: Getting Started</li>
+                                <li>AWS Developer: Building on AWS</li>
+                                <li>AWS Developer: Deployment and Security</li>
+                                <li>AWS Developer: Optimization</li>
+                                <li>AWS Developer: Lambda Deep Dive</li>
+                                <li>AWS Developer: Designing and Developing</li>
+                                <li>AWS Developer: Deploying and Managing</li>
+                                <li>AWS Certified Developer - Associate (DVA-C01)</li>
+                                <li>AWS Developer Associate 2022</li>
+                                <li>AWS Certified Developer Associate (DVA-C02)</li>
+                            </ul>
+                            </div>
+    
+                            <div class="certification">
+                            <h3>Hadoop & Spark Fundamentals / Big Data Processing Using Hadoop</h3>
+                            <p>Courses:</p>
+                            <ul>
+                                <li>Big Data Hadoop and Spark Developer</li>
+                                <li>Spark Fundamentals</li>
+                                <li>Spark Developer in Scala</li>
+                                <li>Spark Developer in Python</li>
+                                <li>Hadoop Developer In Real World</li>
+                                <li>CCA 175 Spark and Hadoop Developer</li>
+                                <li>CCA 175 Spark and Hadoop Developer - Python</li>
+                                <li>Big Data Hadoop Architect (All in 1)</li>
+                                <li>Hadoop Administration</li>
+                            </ul>
+                            </div>
+    
+                            <div class="certification">
+                            <h3>Google Advanced Data Analytics Professional Certificate</h3>
+                            <p>Courses:</p>
+                            <ul>
+                                <li>Foundations of Advanced Data Analytics</li>
+                                <li>Statistical Analysis with Python</li>
+                                <li>Python Data Analytics</li>
+                                <li>Data Storytelling and Visualization with Tableau</li>
+                                <li>Data Processing with Python</li>
+                                <li>Machine Learning Introduction for Everyone</li>
+                                <li>Advanced Google Data Analytics Capstone</li>
+                            </ul>
+                            </div>
+    
+                            <div class="certification">
+                            <h3>Google IT Automation with Python Professional Certificate</h3>
+                            <p>Courses:</p>
+                            <ul>
+                                <li>Crash Course on Python</li>
+                                <li>Using Python to Interact with the Operating System</li>
+                                <li>Introduction to Git and GitHub</li>
+                                <li>Troubleshooting and Debugging Techniques</li>
+                                <li>Configuration Management and the Cloud</li>
+                                <li>Automating Real-World Tasks with Python</li>
+                            </ul>
+                            </div>
+    
+                            <div class="certification">
+                            <h3>Tableau Business Intelligence Analyst Professional Certificate</h3>
+                            <p>Courses:</p>
+                            <ul>
+                                <li>Tableau Fundamentals</li>
+                                <li>Data Visualization with Tableau</li>
+                                <li>Data Storytelling and Visualizations with Tableau</li>
+                                <li>Data Analysis with Tableau</li>
+                                <li>Data-Driven Decisions with Beginner Tableau</li>
+                                <li>Tableau Business Intelligence Analyst Professional Certificate Capstone</li>
+                            </ul>
+                            </div>
+    
+                            <div class="certification">
+                            <h3>IBM RAG and Agentic AI: Build Next-Gen AI Systems Professional Certificate</h3>
+                            <p>Courses:</p>
+                            <ul>
+                                <li>Introduction to Generative AI and LLMs</li>
+                                <li>Generative AI Prompt Engineering</li>
+                                <li>Building Generative AI Applications Using LangChain</li>
+                                <li>Retrieval Augmented Generation (RAG) Concepts</li>
+                                <li>Building Retrieval Augmented Generation (RAG) Systems with Vector Databases</li>
+                                <li>LangGraph: Multi-Agent Workflows</li>
+                            </ul>
+                            </div>
+    
+                            <div class="certification">
+                            <h3>IBM AI Engineering with Python, PyTorch & TensorFlow Professional Certificate</h3>
+                            <p>Courses:</p>
+                            <ul>
+                                <li>Machine Learning with Python</li>
+                                <li>Scalable Machine Learning on Big Data using Apache Spark</li>
+                                <li>Introduction to Deep Learning & Neural Networks with Keras</li>
+                                <li>Deep Neural Networks with PyTorch</li>
+                                <li>Building Deep Learning Models with TensorFlow</li>
+                                <li>AI Capstone Project with Deep Learning</li>
+                            </ul>
+                            </div>
+    
+                            <div class="certification">
+                            <h3>Meta Data Analyst with GenAI Professional Certificate</h3>
+                            <p>Courses:</p>
+                            <ul>
+                                <li>Introduction to Data Analytics</li>
+                                <li>Data Analysis with Python</li>
+                                <li>Data Analysis with R Programming</li>
+                                <li>Data Visualization with Tableau</li>
+                                <li>GenAI for Data Analysts</li>
+                                <li>GenAI for Data Visualization</li>
+                                <li>Data Analyst Capstone Project</li>
+                            </ul>
+                            </div>
+    
+                            <div class="certification">
+                            <h3>Google Generative AI Learning Path</h3>
+                            <p>Courses:</p>
+                            <ul>
+                                <li>Introduction to Generative AI</li>
+                                <li>Introduction to Large Language Models</li>
+                                <li>Introduction to Responsible AI</li>
+                                <li>Generative AI Fundamentals</li>
+                                <li>Create Image Captioning Models</li>
+                                <li>Introduction to Generative AI Studio</li>
+                            </ul>
+                            </div>
+    
+                            <div class="certification">
+                            <h3>IBM Data Management Professional Certificate</h3>
+                            <p>Courses:</p>
+                            <ul>
+                                <li>Introduction to Relational Databases</li>
+                                <li>Databases and SQL for Data Science</li>
+                                <li>Database Administration Fundamentals</li>
+                                <li>Relational Database Administration (DBA)</li>
+                                <li>Relational Database Design</li>
+                                <li>Relational Database Implementation</li>
+                            </ul>
+                            </div>
+    
+                            <div class="certification">
+                            <h3>Google IT Support Professional Certificate</h3>
+                            <p>Courses:</p>
+                            <ul>
+                                <li>Technical Support Fundamentals</li>
+                                <li>The Bits and Bytes of Computer Networking</li>
+                                <li>Operating Systems and You: Becoming a Power User</li>
+                                <li>System Administration and IT Infrastructure Services</li>
+                                <li>Introduction to Hardware and Operating Systems</li>
+                                <li>IT Security: Defense against the digital dark arts</li>
+                            </ul>
+                            </div>
+    
+                            <div class="certification">
+                            <h3>Oracle Cloud and AI Specialization</h3>
+                            <p>Courses:</p>
+                            <ul>
+                                <li>Oracle Cloud Infrastructure Foundations</li>
+                                <li>Oracle Cloud Infrastructure Architect Associate</li>
+                                <li>Oracle Cloud Infrastructure Architect Professional</li>
+                                <li>Oracle Cloud Infrastructure AI Foundations</li>
+                                <li>Oracle Cloud Infrastructure Generative AI Professional</li>
+                                <li>Oracle Cloud Infrastructure Data Foundations Associate</li>
+                            </ul>
+                            </div>
+    
+                            <div class="certification">
+                            <h3>Introduction to MongoDB</h3>
+                            <p>Courses:</p>
+                            <ul>
+                                <li>Introduction to MongoDB</li>
+                                <li>MongoDB Basics</li>
+                                <li>MongoDB Aggregation Framework</li>
+                                <li>MongoDB Security</li>
+                                <li>MongoDB Performance</li>
+                                <li>MongoDB Administration</li>
+                                <li>MongoDB and Python</li>
+                                <li>MongoDB and Ruby</li>
+                                <li>MongoDB and PHP</li>
+                                <li>MongoDB and Node.js</li>
+                            </ul>
+                            </div>
+    
+                            <div class="certification">
+                            <h3>SQL for Any IT Professional Specialization</h3>
+                            <p>Courses:</p>
+                            <ul>
+                                <li>SQL Server for Database Administrators</li>
+                                <li>SQL Server for Developers</li>
+                                <li>SQL Server for Data Analysts</li>
+                                <li>SQL Server for Business Intelligence Professionals</li>
+                                <li>SQL Server for Everyone</li>
+                                <li>SQL Server for Beginners</li>
+                            </ul>
+                            </div>
+    
+                            <div class="certification">
+                            <h3>Google Cybersecurity Professional Certificate</h3>
+                            <p>Courses:</p>
+                            <ul>
+                                <li>Foundations of Cybersecurity</li>
+                                <li>Play It Safe: Manage Security Risks</li>
+                                <li>Connect and Protect: Networks and Network Security</li>
+                                <li>Tools of the Trade: Linux and SQL</li>
+                                <li>Assets, Threats, and Vulnerabilities</li>
+                                <li>Sound the Alarm: Detection and Response</li>
+                                <li>Automate Cybersecurity Tasks with Python</li>
+                                <li>Put It to Work: Prepare for Cybersecurity Jobs</li>
+                            </ul>
+                            </div>
+                    </div>
+                </div>
+        <!-- Professional Experience -->
+        <section id="experience" class="py-20 px-4 bg-white/80 backdrop-blur-sm">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Professional Experience</h2>
+                <div class="space-y-12">
+                    Data Analyst (Data Engineering Focus)  • AD Ports Group • Sep 2024 – Present
+Designed scalable data pipelines integrating Microsoft Dynamics 365 and Oracle Fusion ERP using Python and SQL, reducing reporting time by 40% and overstocking by 20%.
+Developed automated Power BI dashboards and models with Kafka streaming and Great Expectations for data quality, improving operational efficiency across 10+ departments.
+Conducted predictive modeling for procurement trends using Prophet, Lasso, Ridge, optimizing Trino/Presto queries and Delta Lake storage to achieve 15–20% efficiency gains.
+Automated cross-department workflows with Apache Airflow and DataHub metadata management, reducing manual effort by 70%.
+Technical Data Analyst (ERP + CRM) • GlowTouch Technologies •  Sep 2021 – May 2024
+Built data extraction pipelines with SQL, Python, and Debezium, integrating HubSpot, Salesforce, and Microsoft Dynamics 365, cutting troubleshooting time by 35%.
+Automated ETL scripts and log analysis using Apache Spark, improving process efficiency by 30%.
+Developed internal compliance dashboards and fraud-monitoring tools using Power BI and Elasticsearch, ensuring scalable infrastructure and 20% faster data delivery.
+Implemented data governance practices with Apache Atlas and QA coordination, reducing response times by 25%.
+Data Associate (Data Handling & Automation) • Amazon • Aug 2020 – Feb 2021
+Handled high-volume customer data with ETL workflows in Excel and SQL, reducing invoice dispute resolution time by 25%.
+Supported backend incident diagnostics with Python pipelines, improving audit efficiency by 15%.
+Built reporting tools incorporating MongoDB and basic ML for trend analysis, enhancing SLA adherence by 20%.
+Data Representative – Technical Support • Concentrix • Nov 2017 – Oct 2020
+Analyzed system logs and automated processes with Python and batch scripts, reducing manual effort by 30%.
+Managed SAP CRM data flows and ETL processes, improving issue resolution by 25%.
+Supported network security audits and infrastructure maintenance using Active Directory and Linux tools.
+Technical Support Engineer • Anmol Solutions • Jun 2016 – Aug 2017
+Managed server operations, SQL pipelines, and VPN/Active Directory setups, achieving 95% uptime.
+Installed and maintained hardware/software, optimizing data storage and retrieval, reducing downtime by 40%.
+Integrated POS and accounting software via Python scripting, improving operational efficiency by 30%.
+Projects
+Gold Price Prediction Engine: Time-series forecasting with Prophet, Lasso/Ridge, Spark, delivering 5-minute interval predictions.
+Formula 1 Dashboard: Interactive analytics with Plotly Dash and NetworkX, hosted on GitHub.
+Discovering Amazon Archaeological Sites: Geospatial analysis using Python, rasterio, Plotly, OpenAI APIs for 3D modeling.
+Cyclistic Bike-Share Growth Optimization: R, SQL, Python analytics, recommending strategies to increase revenue 10–15%.
+NYC Taxi Fare Prediction: Regression models with PACE framework, improving fare transparency.
+User Churn Prediction (Waze): Supervised ML models to forecast churn and enhance retention.
+Claim vs. Opinion Classification (TikTok): NLP-based classification system for content moderation.
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="py-20 px-4 bg-gray-100/80 backdrop-blur-sm">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Education</h2>
+                <div class="space-y-8">
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg text-center">
+                        <h3 class="text-xl font-semibold mb-2">M.Sc. in Mathematics</h3>
+                        <p class="text-gray-600">St. Aloysius College, Mangalore | 2013 – 2015</p>
+                    </div>
+                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg text-center">
+                        <h3 class="text-xl font-semibold mb-2">B.Sc. in Physics, Chemistry, and Mathematics</h3>
+                        <p class="text-gray-600">St. Aloysius College, Mangalore | 2010 – 2013</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-20 px-4 bg-white/80 backdrop-blur-sm">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Contact</h2>
+                <p class="text-xl text-gray-600 mb-12">Lavian Dsouza | Abu Dhabi, UAE | lavianvishal23@gmail.com | +971 54 752 6875 | LinkedIn: https://www.linkedin.com/in/lavian-d-4975442ab/</p>
+                
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                    <div class="grid md:grid-cols-3 gap-8 mb-8">
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                                <i data-feather="mail" class="text-3xl text-blue-600"></i>
+                            </div>
+                            <h3 class="font-semibold mb-2">Email</h3>
+                            <p class="text-blue-600">lavianvishal23@gmail.com</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                                <i data-feather="phone" class="text-3xl text-purple-600"></i>
+                            </div>
+                            <h3 class="font-semibold mb-2">Phone</h3>
+                            <p class="text-purple-600">+971 54 752 6875</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-20 h-20 mx-auto bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                                <i data-feather="linkedin" class="text-3xl text-purple-600"></i>
+                            </div>
+                            <h3 class="font-semibold mb-2">LinkedIn</h3>
+                            <p class="text-purple-600">lavian-d-4975442ab</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-4">Currently Available For</h3>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <span class="px-4 py-2 bg-white/20 rounded-full">Data Engineering Contracts</span>
+                            <span class="px-4 py-2 bg-white/20 rounded-full">Cloud Migration Projects</span>
+                            <span class="px-4 py-2 bg-white/20 rounded-full">ML Pipeline Development</span>
+                            <span class="px-4 py-2 bg-white/20 rounded-full">Consulting & Architecture</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12 px-4">
+            <div class="max-w-6xl mx-auto text-center">
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="https://www.linkedin.com/in/lavian-d-4975442ab/" class="hover:text-blue-400 transition"><i data-feather="linkedin"></i></a>
+                    <a href="mailto:lavianvishal23@gmail.com" class="hover:text-blue-400 transition"><i data-feather="mail"></i></a>
+                </div>
+                <p class="text-gray-400">© 2025 Lavian Dsouza</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize Vanta.js
+        VANTA.GLOBE({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x667eea,
+            backgroundColor: 0xf8fafc
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+        
+        // Animate skill bars on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.style.width;
+                        entry.target.style.width = '0%';
+                        setTimeout(() => {
+                            entry.target.style.width = width;
+                        }, 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            skillBars.forEach(bar => {
+                observer.observe(bar);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
